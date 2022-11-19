@@ -42,3 +42,20 @@ main {
   background-color: #ffffff;
   min-height: 90vh;
 }
+
+.nav-bar {
+  height: 30px;
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.left-sidebar {
+  padding: 30px;
+  border-right: 1px solid #cacacb;
+  min-height: 60vh;
+}
+.right-sidebar {
+  padding: 30px;
+  border-left: 1px solid #cacacb;
+  min-height: 60vh;
+}
