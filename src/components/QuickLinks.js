@@ -28,18 +28,21 @@ const topQuestions = [
     title: "",
     description: "",
     image: "",
+    answers: []
   },
   {
     id: 2,
     title: "",
     description: "",
     image: "",
+    answers: []
   },
   {
     id: 4,
     title: "",
     description: "",
     image: "",
+    answers: []
   },
 ]
 
