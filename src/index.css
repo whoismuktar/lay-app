@@ -9,9 +9,8 @@ body {
   overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.borderTest {
+  border: 1px solid #000000;
 }
 
 
