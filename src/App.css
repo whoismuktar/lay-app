@@ -37,6 +37,11 @@
   }
 }
 
+.app-wrapper {
+  max-width: 1100px;
+  margin: 0 auto !important;
+}
+
 
 main {
   background-color: #ffffff;

@@ -14,7 +14,8 @@ function Layout({ children }) {
         </Col>
       </Row>
 
-      <Row 
+      <Row
+        className="app-wrapper"
         gutter={{
           xs: 8,
           sm: 16,
@@ -22,15 +23,15 @@ function Layout({ children }) {
           lg: 32,
         }}
       >
-        <Col span={6} className="gutter-row">
+        <Col span={5} className="">
           <LeftSideBar />
         </Col>
 
-        <Col span={12} className="gutter-row">
+        <Col span={14} className="">
           <main>{children}</main>
         </Col>
 
-        <Col span={6} className="gutter-row">
+        <Col span={5} className="">
           <RightSideBar />
         </Col>
       </Row>
