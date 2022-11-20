@@ -44,7 +44,6 @@
 
 
 main {
-  background-color: #ffffff;
   min-height: 90vh;
 }
 
@@ -54,15 +53,16 @@ main {
   background-color: #ffffff;
 }
 
-.left-sidebar {
-  padding: 30px;
-  border-right: 1px solid #cacacb;
+.sidebar {
+  padding: 10px;
   min-height: 60vh;
 }
+
+.left-sidebar {
+  border-right: 1px solid #cacacb;
+}
 .right-sidebar {
-  padding: 30px;
   border-left: 1px solid #cacacb;
-  min-height: 60vh;
 }
 
 .quicklinks__ul__list {

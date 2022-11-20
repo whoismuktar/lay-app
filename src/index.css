@@ -13,7 +13,9 @@ body {
   border: 1px solid #000000;
 }
 
-
+ul {
+  padding: 0;
+}
 li {
   list-style: none;
 }
