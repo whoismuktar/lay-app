@@ -24,3 +24,14 @@ li {
   display: flex;
   align-items: center;
 }
+
+.app-card {
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.feed__top {
+  display: flex;
+}
