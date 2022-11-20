@@ -1,5 +1,4 @@
 import React from "react";
-import { BorderlessTableOutlined, NotificationOutlined } from "@ant-design/icons"
 import { BsBookmarks } from "react-icons/bs";
 import { FiHash, FiTrendingUp } from "react-icons/fi";
 
@@ -7,11 +6,13 @@ const links = [
   {
     title: "Top Questions",
     path: "/top-questions",
+    query: "topQuestion",
     icon: <FiTrendingUp />
   },
   {
     title: "Trending Questions",
     path: "/trending-questions",
+    query: "trendingQuestion",
     icon: <FiHash />
   },
   {
@@ -20,6 +21,36 @@ const links = [
     icon: <BsBookmarks />
   },
 ];
+
+const topQuestions = [
+  {
+    id: 1,
+    title: "",
+    description: "",
+    image: "",
+  },
+  {
+    id: 2,
+    title: "",
+    description: "",
+    image: "",
+  },
+  {
+    id: 4,
+    title: "",
+    description: "",
+    image: "",
+  },
+]
+
+const Listing = (query) => {
+  switch (query) {
+    case "topQuestions":
+      return topQuestions
+    default:
+      break;
+  }
+}
 
 const QuickLinks = () => {
   return (
@@ -34,6 +65,10 @@ const QuickLinks = () => {
                     {link.icon && link.icon}
                   </span>
                   <span>{link.title}</span>
+                </div>
+
+                <div className="item__listing">
+                  {link.query && Listing(link.query)}
                 </div>
               </li>
             )
