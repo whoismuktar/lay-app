@@ -59,3 +59,12 @@ main {
   border-left: 1px solid #cacacb;
   min-height: 60vh;
 }
+
+.quicklinks__ul__list {
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: fit-content;
+}
+.quicklinks__ul__list__icon {
+  margin-right: 10px;
+}
