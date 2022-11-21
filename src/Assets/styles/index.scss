@@ -45,7 +45,16 @@ li {
   }
 }
 
+.box-shadow1 {
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+.box-shadow2 {
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
 .app-card {
+  // @extend .box-shadow1;
   background-color: #ffffff;
   margin-bottom: 20px;
   padding: 20px;

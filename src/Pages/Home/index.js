@@ -17,7 +17,7 @@ const mainFeed = [
       `Lorem ipsum dolor sit amet <b>consectetur adipisicing elit</b>. 
       Praesentium ratione, esse id fugit soluta sunt est culpa 
       deserunt sint reiciendis, voluptate animi molestias 
-      eligendi nobis repellat dolore architecto, unde cum!`,
+      eligendi nobis repellat <em>dolore architecto</em>, unde cum!`,
     image: "",
     created_at: new Date(),
     askedBy: {
