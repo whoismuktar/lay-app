@@ -3,6 +3,9 @@ import { Image, Divider } from "antd";
 import { Filter } from "../../Helper";
 import {GrDown} from "react-icons/gr"
 import {HiOutlineChevronRight} from "react-icons/hi"
+import {BsFillBookmarkFill, BsFlagFill, BsFillBellFill} from "react-icons/bs"
+import {TfiLink} from "react-icons/tfi"
+import {IoMdShareAlt} from "react-icons/io"
 import "../../Assets/styles/feed.scss";
 
 const appAvatar = require("../../Assets/images/avatar.jpg");
@@ -87,7 +90,7 @@ function Home(props) {
                 />
               </div>
 
-              <div className="feed__">
+              <div className="feed__details">
                 <div className="feed__asked_by_name">
                   {`${feed.askedBy.firstName} ${feed.askedBy.lastName}`}
                 </div>
@@ -114,6 +117,14 @@ function Home(props) {
                 <Image width={200} src={feed.image} />
               </div>
             )}
+
+            <div className="feed__icons">
+              <BsFillBookmarkFill />
+              <TfiLink className="feed__icon" />
+              <IoMdShareAlt className="feed__icon" />
+              <BsFlagFill className="feed__icon" />
+              <BsFillBellFill className="feed__icon" />
+            </div>
 
             <div className="feed__answers">
             <Divider orientation="center" plain className="qa-divider">
