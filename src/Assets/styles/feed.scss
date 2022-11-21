@@ -1,0 +1,28 @@
+.feeds {
+  padding: 20px;
+}
+.feed {
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+  &__meta {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 7px;
+  }
+  &__asked_by_avatar {
+    margin-right: 10px;
+  }
+  &__answered_by {
+    color: #988888;
+    font-weight: 600;
+  }
+  &__answered_date {
+    color: #b3a8a8;
+  }
+}
