@@ -1,6 +1,7 @@
 import React from "react";
 import { Image } from "antd";
 import { Filter } from "../../Helper";
+import "../../Assets/styles/feed.scss"
 
 const appAvatar = require("../../Assets/images/avatar.jpg");
 const mainFeed = [
@@ -64,6 +65,8 @@ function Home(props) {
       <div className="feeds">
         {mainFeed.map((feed, i) => (
           <div key={i} className="app-card feed feed-card">
+            <div className="feed__title">{feed.title}</div>
+
             <div className="feed__top">
               <div className="feed__asked_by_avatar">
                 <Image
@@ -84,19 +87,21 @@ function Home(props) {
                 </div>
                 <div className="feed__meta">
                   <div className="feed__answered_by">
-                    Mr A, Ms B & {17+(i+1)} more
+                    Answered by Mr A, Ms B & {17+(i+1)} more
                   </div>
+
+                  <span class="bullet-separator">&bull;</span>
+
                   <div className="feed__answered_date">
-                    {Filter.formatDateFromNow(feed.created_at)}
+                    {Filter.formatDateFromNowShort(feed.created_at)}
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="feed-title">{feed.title}</div>
-            <div className="feed-description">{feed.description}</div>
+            <div className="feed__description">{feed.description}</div>
             {feed.image && (
-              <div className="feed-image">
+              <div className="feed__image">
                 <Image width={200} src={feed.image} />
               </div>
             )}
