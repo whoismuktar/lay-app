@@ -93,3 +93,23 @@ main {
     cursor: pointer;
   }
 }
+
+.input-box {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .send-comment {
+    font-size: 20px;
+    color: #d3d2d5;
+    
+    &.can-send {
+      cursor: pointer;
+      color: green;
+    }
+  }
+}
