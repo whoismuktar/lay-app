@@ -58,5 +58,40 @@ li {
   background-color: #ffffff;
   margin-bottom: 20px;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 16px;
+}
+
+.user-card {
+  border-radius: 16px;
+  // overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  width: 40px !important;
+  height: 40px !important;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &.even-card {
+    margin-top: 15px;
+  }
+}
+
+.user-card-group {
+  display: flex;
+
+  .user-card {
+    @extend .user-card;
+
+    display: block;
+    border: 3px solid #ffffff;
+    
+    &:not(:first-child) {
+      margin-left: -28px;
+    }
+  }
 }

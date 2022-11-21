@@ -2,13 +2,12 @@ import React from "react";
 import { Image } from "antd";
 const appAvatar = require("../Assets/images/avatar.jpg");
 
-function UserCard({user}) {
+function UserCard({user, preview=false, className}) {
   return (
-    <div className="user-card">
+    <div className={`user-card ${className}`}>
       <Image
-        width={40}
-        height={40}
         src={user.profileImage ? user.profileImage : appAvatar}
+        preview={preview}
         alt={`${user.firstName}'s profile image`}
       />
     </div>
