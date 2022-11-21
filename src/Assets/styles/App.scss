@@ -73,3 +73,23 @@ main {
 .quicklinks__ul__list__icon {
   margin-right: 10px;
 }
+
+.vote-action {
+  width: 5%;
+  height: 75px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__count {
+    font-weight: bold;
+    color: #818084;
+  }
+  &__vote__btn {
+    font-size: 17px;
+    color: #818084;
+    cursor: pointer;
+  }
+}

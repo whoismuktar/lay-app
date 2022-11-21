@@ -2,45 +2,60 @@
   padding: 20px;
 }
 .feed {
+  &-card {
+    display: flex;
+  }
+  &__wrapper {
+    width: 90%;
+  }
   &__top {
     display: flex;
     align-items: center;
   }
+
   &__meta {
     display: flex;
     align-items: center;
     font-size: 12px;
   }
+
   &__title {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 7px;
   }
+
   &__description {
     font-size: 15px;
     line-height: 20px;
     margin-top: 10px;
   }
+
   &__asked_by_name {
     color: #777777
   }
+
   &__asked_by_avatar {
     margin-right: 10px;
   }
+
   &__answered_by {
     color: #988888;
     font-weight: 600;
     font-style: italic;
   }
+
   &__answered_date {
     color: #b3a8a8;
   }
+
   &__footer {
     display: flex;
     align-items: center;
     margin-top: 20px;
     justify-content: space-between;
   }
+
   &__icons {
     .feed__icon {
       cursor: pointer;
@@ -55,6 +70,7 @@
         color: #9e9da0;
         background-color: #f5e8e8;
       }
+
     }
   }
 }
