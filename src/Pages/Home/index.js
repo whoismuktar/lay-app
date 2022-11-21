@@ -1,5 +1,6 @@
-import { Image } from "antd";
 import React from "react";
+import { Image } from "antd";
+import { Filter } from "../../Helper";
 
 const appAvatar = require("../../Assets/images/avatar.jpg");
 const mainFeed = [
@@ -8,6 +9,7 @@ const mainFeed = [
     title: "What is a Question?",
     description: "",
     image: "",
+    created_at: new Date(),
     askedBy: {
       username: "bisi",
       firstName: "Bisi",
@@ -25,7 +27,7 @@ const mainFeed = [
           lastName: "Da Conquerer",
           profileImage: require("../../Assets/images/conquerer.jpeg"),
         },
-      }
+      },
     ],
   },
   {
@@ -33,6 +35,7 @@ const mainFeed = [
     title: "What is an Answer?",
     description: "",
     image: "",
+    created_at: new Date("Nov 19, 2022"),
     askedBy: {
       username: "dexter",
       firstName: "Jamal",
@@ -50,7 +53,7 @@ const mainFeed = [
           lastName: "Afonja",
           profileImage: null,
         },
-      }
+      },
     ],
   },
 ];
@@ -65,7 +68,7 @@ function Home(props) {
               <div className="feed__asked_by_avatar">
                 <Image
                   width={40}
-                  Height={40}
+                  height={40}
                   src={
                     feed.askedBy.profileImage
                       ? feed.askedBy.profileImage
@@ -74,20 +77,29 @@ function Home(props) {
                   alt={`${feed.askedBy.firstName}'s profile image`}
                 />
               </div>
-              <div>
+
+              <div className="feed__">
                 <div className="feed__asked_by_name">
                   {`${feed.askedBy.firstName} ${feed.askedBy.lastName}`}
                 </div>
-                <div className="feed__answered_by"></div>
-                <div className="feed__answered_date"></div>
+                <div className="feed__meta">
+                  <div className="feed__answered_by">
+                    Mr A, Ms B & {17+(i+1)} more
+                  </div>
+                  <div className="feed__answered_date">
+                    {Filter.formatDateFromNow(feed.created_at)}
+                  </div>
+                </div>
               </div>
             </div>
 
             <div className="feed-title">{feed.title}</div>
             <div className="feed-description">{feed.description}</div>
-            <div className="feed-image">
-              <Image width={200} src={feed.image && feed.image} />
-            </div>
+            {feed.image && (
+              <div className="feed-image">
+                <Image width={200} src={feed.image} />
+              </div>
+            )}
           </div>
         ))}
       </div>
