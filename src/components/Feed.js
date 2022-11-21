@@ -7,8 +7,7 @@ import {BsFillBookmarkFill, BsFlagFill, BsFillBellFill} from "react-icons/bs"
 import {TfiLink} from "react-icons/tfi"
 import {IoMdShareAlt} from "react-icons/io"
 import "../Assets/styles/feed.scss";
-
-const appAvatar = require("../Assets/images/avatar.jpg");
+import UserCard from "./UserCard";
 
 function Feed({feed, i}) {
   return (
@@ -17,14 +16,7 @@ function Feed({feed, i}) {
 
       <div className="feed__top">
         <div className="feed__asked_by_avatar">
-          <Image
-            width={40}
-            height={40}
-            src={
-              feed.askedBy.profileImage ? feed.askedBy.profileImage : appAvatar
-            }
-            alt={`${feed.askedBy.firstName}'s profile image`}
-          />
+          <UserCard user={feed.askedBy} />
         </div>
 
         <div className="feed__details">
