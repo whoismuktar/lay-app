@@ -11,7 +11,7 @@ const mainFeed = [
     id: 1,
     title: "What is a Question?",
     description:
-      `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      `Lorem ipsum dolor sit amet <b>consectetur adipisicing elit</b>. 
       Praesentium ratione, esse id fugit soluta sunt est culpa 
       deserunt sint reiciendis, voluptate animi molestias 
       eligendi nobis repellat dolore architecto, unde cum!`,
@@ -105,7 +105,10 @@ function Home(props) {
               </div>
             </div>
 
-            <div className="feed__description">{feed.description}</div>
+            <div className="feed__description"
+              dangerouslySetInnerHTML={{__html:feed.description}}
+            />
+
             {feed.image && (
               <div className="feed__image">
                 <Image width={200} src={feed.image} />
