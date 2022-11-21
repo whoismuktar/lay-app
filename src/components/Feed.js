@@ -11,6 +11,8 @@ import { BiDownvote } from "react-icons/bi";
 import "../Assets/styles/feed.scss";
 import UserCard from "./UserCard";
 import UserCardGroup from "./UserCardGroup";
+import InputBox from "./InputBox";
+import ReplyThread from "./ReplyThread";
 
 function Feed({ feed, i }) {
   const answers = feed.answers;
@@ -45,7 +47,7 @@ function Feed({ feed, i }) {
                 Answered by Mr A, Ms B & {17 + (i + 1)} more
               </div>
 
-              <span class="bullet-separator">&bull;</span>
+              <span className="bullet-separator">&bull;</span>
 
               <div className="feed__answered_date">
                 {Filter.formatDateFromNowShort(feed.created_at)} ago
@@ -95,6 +97,10 @@ function Feed({ feed, i }) {
               {/* <HiOutlineChevronRight className="__icon" /> */}
             </div>
           </Divider>
+
+          <InputBox />
+
+          <ReplyThread comments={answers} />
         </div>
       </div>
     </div>

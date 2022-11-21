@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7e9f8;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .borderTest {
@@ -20,6 +20,18 @@ li {
   list-style: none;
 }
 
+.dflex {
+  display: flex;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+.justify-space-between {
+  display: flex;
+  justify-content: space-between;
+}
 .align-center {
   display: flex;
   align-items: center;

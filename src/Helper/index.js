@@ -1,6 +1,21 @@
 import moment from "moment";
 
 export const Filter = {
+  getFullName(user) {
+    if (user) {
+      return `${user.firstName} ${user.lastName}`
+    }
+    return ""
+  },
+  currentUser() {
+    return {
+      username: "dexter",
+      firstName: "Jamal",
+      lastName: "Da Conquerer",
+      profileImage: require("../Assets/images/conquerer.jpeg"),
+    }
+  },
+
   toLocalTimeString(str) {
     return moment(str).calendar(null, {
       lastDay: "[Yesterday,] LT",

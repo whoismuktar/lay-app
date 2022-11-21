@@ -1,12 +1,11 @@
 import React from "react";
-import Feed from "../../components/Feed"
+import Feed from "../../components/Feed";
 
 const mainFeed = [
   {
     id: 1,
     title: "What is a Question?",
-    description:
-      `Lorem ipsum dolor sit amet <b>consectetur adipisicing elit</b>. 
+    description: `Lorem ipsum dolor sit amet <b>consectetur adipisicing elit</b>. 
       Praesentium ratione, esse id fugit soluta sunt est culpa 
       deserunt sint reiciendis, voluptate animi molestias 
       eligendi nobis repellat <em>dolore architecto</em>, unde cum!`,
@@ -29,6 +28,41 @@ const mainFeed = [
           lastName: "Da Conquerer",
           profileImage: require("../../Assets/images/conquerer.jpeg"),
         },
+        replies: [
+          {
+            comment: {
+              title: "I really dont know",
+            },
+            user: {
+              username: "princess",
+              firstName: "Castle",
+              lastName: "Bearer",
+              profileImage: null,
+            },
+          },
+          {
+            comment: {
+              title: "I really dont know",
+            },
+            user: {
+              username: "princess",
+              firstName: "Castle",
+              lastName: "Bearer",
+              profileImage: null,
+            },
+          },
+          {
+            comment: {
+              title: "I really dont know",
+            },
+            user: {
+              username: "princess",
+              firstName: "Castle",
+              lastName: "Bearer",
+              profileImage: null,
+            },
+          },
+        ],
       },
       {
         comment: {
