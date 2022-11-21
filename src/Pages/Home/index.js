@@ -1,14 +1,20 @@
 import React from "react";
-import { Image } from "antd";
+import { Image, Divider } from "antd";
 import { Filter } from "../../Helper";
-import "../../Assets/styles/feed.scss"
+import {GrDown} from "react-icons/gr"
+import {HiOutlineChevronRight} from "react-icons/hi"
+import "../../Assets/styles/feed.scss";
 
 const appAvatar = require("../../Assets/images/avatar.jpg");
 const mainFeed = [
   {
     id: 1,
     title: "What is a Question?",
-    description: "",
+    description:
+      `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Praesentium ratione, esse id fugit soluta sunt est culpa 
+      deserunt sint reiciendis, voluptate animi molestias 
+      eligendi nobis repellat dolore architecto, unde cum!`,
     image: "",
     created_at: new Date(),
     askedBy: {
@@ -87,13 +93,13 @@ function Home(props) {
                 </div>
                 <div className="feed__meta">
                   <div className="feed__answered_by">
-                    Answered by Mr A, Ms B & {17+(i+1)} more
+                    Answered by Mr A, Ms B & {17 + (i + 1)} more
                   </div>
 
                   <span class="bullet-separator">&bull;</span>
 
                   <div className="feed__answered_date">
-                    {Filter.formatDateFromNowShort(feed.created_at)}
+                    {Filter.formatDateFromNowShort(feed.created_at)} ago
                   </div>
                 </div>
               </div>
@@ -105,6 +111,17 @@ function Home(props) {
                 <Image width={200} src={feed.image} />
               </div>
             )}
+
+            <div className="feed__answers">
+            <Divider orientation="center" plain className="qa-divider">
+              <div className="inner">
+                <span className="__text">Lay Answers</span>
+                <GrDown className="__icon" />
+                {/* <HiOutlineChevronRight className="__icon" /> */}
+              </div>
+            </Divider>
+
+            </div>
           </div>
         ))}
       </div>

@@ -9,11 +9,17 @@
   &__meta {
     display: flex;
     align-items: center;
+    font-size: 12px;
   }
   &__title {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 7px;
+  }
+  &__description {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 10px;
   }
   &__asked_by_avatar {
     margin-right: 10px;
@@ -21,6 +27,7 @@
   &__answered_by {
     color: #988888;
     font-weight: 600;
+    font-style: italic;
   }
   &__answered_date {
     color: #b3a8a8;

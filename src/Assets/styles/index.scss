@@ -26,10 +26,23 @@ li {
 }
 
 .bullet-separator {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
   color: #888888;
   font-size: 18px;
+}
+
+.qa-divider {
+  .inner {
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+
+    .__text {
+      margin-right: 5px;
+      font-weight: 500;
+    }
+  }
 }
 
 .app-card {
