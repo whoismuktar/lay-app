@@ -35,8 +35,13 @@
   &__answered_date {
     color: #b3a8a8;
   }
-  &__icons {
+  &__footer {
+    display: flex;
+    align-items: center;
     margin-top: 20px;
+    justify-content: space-between;
+  }
+  &__icons {
     .feed__icon {
       cursor: pointer;
       color: #d3d2d5;

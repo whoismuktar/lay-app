@@ -30,6 +30,28 @@ const mainFeed = [
           profileImage: require("../../Assets/images/conquerer.jpeg"),
         },
       },
+      {
+        comment: {
+          title: "I really dont know",
+        },
+        user: {
+          username: "princess",
+          firstName: "Castle",
+          lastName: "Bearer",
+          profileImage: null,
+        },
+      },
+      {
+        comment: {
+          title: "I dont know",
+        },
+        user: {
+          username: "mario",
+          firstName: "Mr",
+          lastName: "Warner",
+          profileImage: require("../../Assets/images/conquerer.jpeg"),
+        },
+      },
     ],
   },
   {

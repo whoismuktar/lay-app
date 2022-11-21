@@ -8,15 +8,19 @@ import {TfiLink} from "react-icons/tfi"
 import {IoMdShareAlt} from "react-icons/io"
 import "../Assets/styles/feed.scss";
 import UserCard from "./UserCard";
+import UserCardGroup from "./UserCardGroup";
 
 function Feed({feed, i}) {
+  const answers = feed.answers
+  const userGroup = answers.map(ans => ans.user)
+
   return (
     <div key={i} className="app-card feed feed-card">
       <div className="feed__title">{feed.title}</div>
 
       <div className="feed__top">
         <div className="feed__asked_by_avatar">
-          <UserCard user={feed.askedBy} />
+          <UserCard user={feed.askedBy} preview />
         </div>
 
         <div className="feed__details">
@@ -48,23 +52,28 @@ function Feed({feed, i}) {
         </div>
       )}
 
-      <div className="feed__icons">
-        <Tooltip title="Bookmark">
-          <BsFillBookmarkFill className="feed__icon" />
-        </Tooltip>
-        <Tooltip title="Copy Link">
-          <TfiLink className="feed__icon" />
-        </Tooltip>
-        <Tooltip title="Share">
-          <IoMdShareAlt className="feed__icon" />
-        </Tooltip>
-        <Tooltip title="Flag">
-          <BsFlagFill className="feed__icon" />
-        </Tooltip>
-        <Tooltip title="Subscribe">
-          <BsFillBellFill className="feed__icon" />
-        </Tooltip>
+      <div className="feed__footer">
+        <div className="feed__icons">
+          <Tooltip title="Bookmark">
+            <BsFillBookmarkFill className="feed__icon" />
+          </Tooltip>
+          <Tooltip title="Copy Link">
+            <TfiLink className="feed__icon" />
+          </Tooltip>
+          <Tooltip title="Share">
+            <IoMdShareAlt className="feed__icon" />
+          </Tooltip>
+          <Tooltip title="Flag">
+            <BsFlagFill className="feed__icon" />
+          </Tooltip>
+          <Tooltip title="Subscribe">
+            <BsFillBellFill className="feed__icon" />
+          </Tooltip>
+        </div>
+
+        <UserCardGroup users={userGroup} />
       </div>
+
 
       <div className="feed__answers">
         <Divider orientation="center" plain className="qa-divider">
