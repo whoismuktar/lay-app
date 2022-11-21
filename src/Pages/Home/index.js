@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Divider } from "antd";
+import { Image, Divider, Tooltip } from "antd";
 import { Filter } from "../../Helper";
 import {GrDown} from "react-icons/gr"
 import {HiOutlineChevronRight} from "react-icons/hi"
@@ -119,11 +119,21 @@ function Home(props) {
             )}
 
             <div className="feed__icons">
-              <BsFillBookmarkFill />
-              <TfiLink className="feed__icon" />
-              <IoMdShareAlt className="feed__icon" />
-              <BsFlagFill className="feed__icon" />
-              <BsFillBellFill className="feed__icon" />
+              <Tooltip title="Bookmark">
+                <BsFillBookmarkFill />
+              </Tooltip>
+              <Tooltip title="Copy Link">
+                <TfiLink className="feed__icon" />
+              </Tooltip>
+              <Tooltip title="Share">
+                <IoMdShareAlt className="feed__icon" />
+              </Tooltip>
+              <Tooltip title="Flag">
+                <BsFlagFill className="feed__icon" />
+              </Tooltip>
+              <Tooltip title="Subscribe">
+                <BsFillBellFill className="feed__icon" />
+              </Tooltip>
             </div>
 
             <div className="feed__answers">
