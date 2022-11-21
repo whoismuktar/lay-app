@@ -25,16 +25,16 @@ li {
   align-items: center;
 }
 
+.bullet-separator {
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #888888;
+  font-size: 18px;
+}
+
 .app-card {
   background-color: #ffffff;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 15px;
-}
-
-.feed__top {
-  display: flex;
-}
-.feed__meta {
-  display: flex;
 }
