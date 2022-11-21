@@ -17,7 +17,7 @@
     margin-bottom: 7px;
   }
   &__description {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
     margin-top: 10px;
   }
@@ -34,7 +34,7 @@
   }
   &__icons {
     margin-top: 20px;
-    * {
+    .feed__icon {
       cursor: pointer;
       color: #d3d2d5;
       font-size: 14px;
@@ -42,6 +42,11 @@
       margin-right: 10px;
       padding: 5px;
       border-radius: 5px;
+
+      &:hover {
+        color: #9e9da0;
+        background-color: #f5e8e8;
+      }
     }
   }
 }

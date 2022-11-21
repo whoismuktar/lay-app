@@ -120,7 +120,7 @@ function Home(props) {
 
             <div className="feed__icons">
               <Tooltip title="Bookmark">
-                <BsFillBookmarkFill />
+                <BsFillBookmarkFill className="feed__icon" />
               </Tooltip>
               <Tooltip title="Copy Link">
                 <TfiLink className="feed__icon" />
