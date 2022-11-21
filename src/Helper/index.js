@@ -31,6 +31,11 @@ export const Filter = {
       const ago = moment(String(value)).fromNow(true);
       const splitAgo = ago.split(" ");
 
+      if (ago.includes("seconds")) {
+        return ago;
+       
+      }
+
       return `${splitAgo[0]}${splitAgo[1][0]}`;
     }
   },
