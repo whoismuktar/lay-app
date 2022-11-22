@@ -74,4 +74,16 @@
 
     }
   }
+
+  .user-card {
+    .ant-image-mask {
+      font-size: 0;
+
+      span {
+        font-size: 12px;
+        margin: 0;
+        margin-inline-end: 0 !important;
+      }
+    }
+  }
 }
