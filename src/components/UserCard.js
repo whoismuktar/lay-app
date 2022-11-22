@@ -1,6 +1,6 @@
 import React from "react";
 import { Image } from "antd";
-const appAvatar = require("../Assets/images/avatar.jpg");
+const appAvatar = require("../Assets/images/avatar.png");
 
 function UserCard({user, preview=false, className=""}) {
   return (
