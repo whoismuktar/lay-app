@@ -1,8 +1,15 @@
 import React from "react";
-import { BsBookmarks } from "react-icons/bs";
+import { BiHomeAlt } from "react-icons/bi";
+import { IoBookmarksOutline } from "react-icons/io5";
 import { FiHash, FiTrendingUp } from "react-icons/fi";
 
 const links = [
+  {
+    title: "Home",
+    path: "/",
+    query: "home",
+    icon: <BiHomeAlt />
+  },
   {
     title: "Top Questions",
     path: "/top-questions",
@@ -18,7 +25,7 @@ const links = [
   {
     title: "Your Bookmarks",
     path: "/bookmarks",
-    icon: <BsBookmarks />
+    icon: <IoBookmarksOutline />
   },
 ];
 
@@ -63,11 +70,11 @@ const QuickLinks = () => {
           links.map((link, i)=> {
             return (
               <li key={i} className="align-center quicklinks__ul__list">
-                <div>
+                <div className="align-center">
                   <span className="app__icon quicklinks__ul__list__icon">
                     {link.icon && link.icon}
                   </span>
-                  <span>{link.title}</span>
+                  <span className="quicklinks__title">{link.title}</span>
                 </div>
 
                 <div className="item__listing">
