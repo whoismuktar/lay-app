@@ -124,9 +124,12 @@ main {
 .comment-thread {
   margin-top: 20px;
 
+  &__divider {
+    margin: 15px -58px 15px;
+    width: calc(100% + 100px);
+  }
 
   .comment {
-    margin-bottom: 20px;
     flex: 1;
 
     .user-card {

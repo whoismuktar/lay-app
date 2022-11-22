@@ -4,6 +4,7 @@
 .feed {
   &-card {
     display: flex;
+    overflow-x: hidden;
   }
   &__wrapper {
     width: 90%;

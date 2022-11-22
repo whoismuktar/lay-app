@@ -49,7 +49,6 @@ function Reply({ comment }) {
           <FiMoreHorizontal />
         </div>
       </div>
-
     </div>
     </>
   );
