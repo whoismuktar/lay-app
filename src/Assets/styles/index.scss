@@ -75,13 +75,14 @@ li {
 
 .user-card {
   border-radius: 16px;
-  // overflow: hidden;
   object-fit: cover;
   object-position: center;
   position: relative;
   width: 40px !important;
   height: 40px !important;
   overflow: hidden;
+  margin-right: 10px;
+  background-color: #f7e0fa;
 
   img {
     object-fit: cover;
