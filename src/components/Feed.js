@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Image, Divider, Tooltip } from "antd";
 import { Filter } from "../Helper";
 import { GrDown } from "react-icons/gr";
@@ -17,6 +18,11 @@ import ReplyThread from "./ReplyThread";
 function Feed({ feed, i }) {
   const answers = feed.answers;
   const userGroup = answers.map((ans) => ans.user);
+
+  const [ openAnswers, setOpenAnswers] = useState();
+  const openNow = () => {
+    setOpenAnswers(!openAnswers);
+  }
 
   return (
     <div key={i} className="app-card feed feed-card">
@@ -89,7 +95,7 @@ function Feed({ feed, i }) {
           <UserCardGroup users={userGroup} />
         </div>
 
-        <div className="feed__answers">
+        <div onClick={openNow} className="feed__answers">
           <Divider orientation="center" plain className="qa-divider">
             <div className="inner">
               <span className="__text">Lay Answers</span>
@@ -100,7 +106,7 @@ function Feed({ feed, i }) {
 
           <InputBox />
 
-          <ReplyThread comments={answers} />
+          {openAnswers && <ReplyThread comments={answers} />}
         </div>
       </div>
     </div>
