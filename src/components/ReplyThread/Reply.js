@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import { FiMoreHorizontal } from "react-icons/fi";
+import { BiUpvote, BiDownvote } from "react-icons/bi";
 import { Filter } from "../../Helper";
 import UserCard from "../UserCard";
 
@@ -11,6 +12,16 @@ function Reply({ comment }) {
   return (
     <>
     <div className="align-center">
+    <div className="feed__vote vote-action">
+        <div className="vote-action__vote__btn vote-action__upvote">
+          <BiUpvote />
+        </div>
+        <div className="vote-action__count">0</div>
+        <div className="vote-action__vote__btn vote-action__downvote">
+          <BiDownvote />
+        </div>
+      </div>
+      
       <div className="comment">
         <div className="comment__top align-center">
           <UserCard user={comment.user} />
