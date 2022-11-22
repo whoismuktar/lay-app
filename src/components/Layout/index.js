@@ -27,11 +27,11 @@ function Layout({ children }) {
           <LeftSideBar />
         </Col>
 
-        <Col span={14} className="">
+        <Col span={13} className="">
           <main>{children}</main>
         </Col>
 
-        <Col span={5} className="">
+        <Col span={6} className="">
           <RightSideBar />
         </Col>
       </Row>

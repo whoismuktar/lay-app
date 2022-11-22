@@ -47,6 +47,14 @@ main {
   min-height: 90vh;
 }
 
+.box-shadow1 {
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+.box-shadow2 {
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
 .nav-bar {
   height: 30px;
   padding: 30px;
@@ -59,6 +67,39 @@ main {
   box-sizing: border-box;
   position: sticky;
   top: 0px;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__card {
+    @extend .box-shadow2;
+    
+    background-color: #f7f7f7;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+}
+
+.tags {
+  .tag {
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: fit-content;
+
+    &__title {
+      font-weight: 500;
+      line-height: 2;
+    }
+    &__subtitle {
+      font-size: 12px;
+      font-weight: 500;
+      color: #777777;
+    }
+  }
 }
 
 .left-sidebar {
@@ -66,6 +107,7 @@ main {
 }
 .right-sidebar {
   border-left: 1px solid #cacacb;
+  // background-color: red;
 }
 
 .quicklinks__ul__list {
