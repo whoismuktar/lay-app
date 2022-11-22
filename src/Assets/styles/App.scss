@@ -55,7 +55,10 @@ main {
 
 .sidebar {
   padding: 10px;
-  min-height: 60vh;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0px;
 }
 
 .left-sidebar {
@@ -110,6 +113,54 @@ main {
     &.can-send {
       cursor: pointer;
       color: green;
+    }
+  }
+}
+
+.comment__time {
+  color: #b3a8a8;
+}
+
+.comment-thread {
+  margin-top: 20px;
+
+
+  .comment {
+    margin-bottom: 20px;
+    flex: 1;
+
+    .user-card {
+      width: 30px !important;
+      height: 30px !important;
+      border-radius: 7px;
+    }
+
+    &__text {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    &__side-action {
+      color: #938a8a;
+    }
+    &__like {
+      cursor: pointer;
+      
+      .liked {
+        color: red;
+      }
+    }
+    &__action {
+      color: #9e9da0;
+      
+      * {
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      
+      .comment__reply {
+        margin-right: 5px;
+      }
     }
   }
 }
