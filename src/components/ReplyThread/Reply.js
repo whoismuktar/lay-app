@@ -32,7 +32,7 @@ function Reply({ comment }) {
         />
 
         <div className="comment__action">
-          <span className="comment__reply">Reply</span>
+          {/* <span className="comment__reply">Reply</span> */}
           <span className="comment__flag">Flag</span>
         </div>
 
