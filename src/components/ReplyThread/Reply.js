@@ -11,56 +11,56 @@ const recursiveReply = (reply) => {
 function Reply({ comment }) {
   return (
     <>
-    <div className="align-center">
-    <div className="feed__vote vote-action">
-        <div className="vote-action__vote__btn vote-action__upvote">
-          <BiUpvote />
-        </div>
-        <div className="vote-action__count">0</div>
-        <div className="vote-action__vote__btn vote-action__downvote">
-          <BiDownvote />
-        </div>
-      </div>
-      
-      <div className="comment">
-        <div className="comment__top align-center">
-          <UserCard user={comment.user} />
-
-          <div>
-            <span className="user__name">
-              {Filter.getFullName(comment.user)}
-              {comment.replies && comment.replies.length}
-            </span>
-            <div className="comment__answered_date comment__time">
-              {Filter.formatDateFromNowShort(new Date())} ago
-            </div>
+      <div className="align-center">
+        <div className="vote-action">
+          <div className="vote-action__vote__btn vote-action__upvote">
+            <BiUpvote />
+          </div>
+          <div className="vote-action__count">0</div>
+          <div className="vote-action__vote__btn vote-action__downvote">
+            <BiDownvote />
           </div>
         </div>
 
-        <div
-          className="comment__text"
-          dangerouslySetInnerHTML={{ __html: comment.comment.title }}
-        />
+        <div className="comment">
+          <div className="comment__top align-center">
+            <UserCard user={comment.user} />
 
-        <div className="comment__action">
-          {/* <span className="comment__reply">Reply</span> */}
-          <span className="comment__flag">Flag</span>
+            <div>
+              <span className="user__name">
+                {Filter.getFullName(comment.user)}
+                {comment.replies && comment.replies.length}
+              </span>
+              <div className="comment__answered_date comment__time">
+                {Filter.formatDateFromNowShort(new Date())} ago
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="comment__text"
+            dangerouslySetInnerHTML={{ __html: comment.comment.title }}
+          />
+
+          <div className="comment__action">
+            {/* <span className="comment__reply">Reply</span> */}
+            <span className="comment__flag">Flag</span>
+          </div>
+
+          {/* {comment.replies && recursiveReply(comment.replies)} */}
+          {/* {JSON.stringify(comment)} */}
         </div>
 
-        {/* {comment.replies && recursiveReply(comment.replies)} */}
-        {/* {JSON.stringify(comment)} */}
+        <div className="dflex comment__side-action">
+          <div className="comment__like">
+            {!comment.liked && <AiOutlineHeart />}
+            {comment.liked && <AiTwotoneHeart className="liked" />}
+          </div>
+          <div className="more-option">
+            <FiMoreHorizontal />
+          </div>
+        </div>
       </div>
-
-      <div className="dflex comment__side-action">
-        <div className="comment__like">
-          {!comment.liked && <AiOutlineHeart />}
-          {comment.liked && <AiTwotoneHeart className="liked" />}
-        </div>
-        <div className="more-option">
-          <FiMoreHorizontal />
-        </div>
-      </div>
-    </div>
     </>
   );
 }
