@@ -3,6 +3,7 @@ import LeftSideBar from "./LeftSideBar";
 import RightSideBar from "./RightSideBar";
 import NavBar from "./NavBar/index.js";
 import { Col, Row } from "antd";
+import { Outlet } from "react-router-dom";
 
 
 function Layout({ children }) {
@@ -28,7 +29,9 @@ function Layout({ children }) {
         </Col>
 
         <Col span={12} className="">
-          <main>{children}</main>
+          <main>
+            <Outlet />
+          </main>
         </Col>
 
         <Col span={6} className="">
