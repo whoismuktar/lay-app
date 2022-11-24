@@ -121,7 +121,7 @@ function Home(props) {
     <div className="home">
       <div className="feeds">
         {mainFeed.map((feed, i) => (
-          <Feed feed={feed} i={i} />
+          <Feed feed={feed} key={i} />
         ))}
       </div>
     </div>
