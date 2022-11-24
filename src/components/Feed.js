@@ -4,7 +4,7 @@ import { Image, Divider, Tooltip } from "antd";
 import { Filter } from "../Helper";
 import { GrDown } from "react-icons/gr";
 import { HiOutlineChevronRight } from "react-icons/hi";
-import { BsFillBookmarkFill, BsFlagFill, BsFillBellFill } from "react-icons/bs";
+import { BsFillBookmarkFill, BsFlagFill, BsFillBellFill, BsTranslate } from "react-icons/bs";
 import { TfiLink } from "react-icons/tfi";
 import { IoMdShareAlt } from "react-icons/io";
 import { BiUpvote, BiDownvote } from "react-icons/bi";
@@ -88,6 +88,9 @@ function Feed({ feed, i }) {
             </Tooltip>
             <Tooltip title="Subscribe">
               <BsFillBellFill className="feed__icon" />
+            </Tooltip>
+            <Tooltip title="Translate">
+              <BsTranslate className="feed__icon" />
             </Tooltip>
           </div>
 
