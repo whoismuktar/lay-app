@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Filter } from "../Helper";
 
 const tagsBank = [
@@ -47,19 +47,42 @@ const tagsBank = [
     count: 40000,
   },
 ];
-function TagList(props) {
+function TagList({ truncate, len = 5 }) {
+  const [list, setList] = useState(tagsBank)
+
+  
+  useEffect(() => {
+    const updateList = ()=> setList(tagsBank.slice(0, len))
+    if (truncate) {
+      updateList()
+    }
+  }, [len, truncate])
+  
+  const expand = (qty = 2) => {
+    setList(tagsBank.slice(0, list.length + qty))
+  };
+
   return (
-    <ul className="tag-list tags">
-      {tagsBank.map((tag, i) => (
-        <li key={i} className="tag" id={tag.title.replaceAll(" ", "-")}>
-          <div className="tag__title">{tag.title}</div>
-          <div className="tag__subtitle dflex">
-            <div className="tag__subtitle-count">{ Filter.formatLargeNumber(tag.count)}</div>
-            <div className="tag__subtitle-text"> - Q&A</div>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="tag-list tags">
+        {list.map((tag, i) => (
+          <li key={i} className="tag" id={tag.title.replaceAll(" ", "-")}>
+            <div className="tag__title">{tag.title}</div>
+            <div className="tag__subtitle dflex">
+              <div className="tag__subtitle-count">
+                {Filter.formatLargeNumber(tag.count)}
+              </div>
+              <div className="tag__subtitle-text"> - Q&A</div>
+            </div>
+          </li>
+        ))}
+      </ul>
+      {(truncate && list.length < tagsBank.length) && (
+        <div className="sidebar__more" onClick={() => expand(3)}>
+          More
+        </div>
+      )}
+    </>
   );
 }
 

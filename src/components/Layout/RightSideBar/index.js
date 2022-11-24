@@ -1,25 +1,32 @@
 import React from "react";
 import { useMatch } from "react-router-dom";
 import TagList from "../../TagList";
+import UserList from "../../UserList";
 
 const RightSideBar = () => {
-  const isHome = useMatch({ 
-    path: '/',
-    end: true, 
-    caseSensitive: true 
+  const isHome = useMatch({
+    path: "/",
+    end: true,
+    caseSensitive: true,
   });
+
+  const truncateList = () => {}
 
   return (
     <div className="sidebar right-sidebar">
-        {
-          isHome &&
-          <>
-            <div className="sidebar__card">
-              <div className="sidebar__title">Trends for you</div>
-              <TagList />
-            </div>
-            </>
-        }
+      {isHome && (
+        <>
+          <div className="sidebar__card">
+            <div className="sidebar__title">Trends for you</div>
+            <TagList truncate />
+          </div>
+        </>
+      )}
+      
+      <div className="sidebar__card">
+        <div className="sidebar__title">Top Contributors</div>
+        <UserList truncate />
+      </div>
     </div>
   );
 };

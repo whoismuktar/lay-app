@@ -2,25 +2,26 @@ import React from "react";
 import { Filter } from "../../Helper";
 import UserCard from "../UserCard";
 
-function QuestionCard({question, idx}) {
-
+function QuestionCard({ question, idx }) {
   const readMoreLen = 90;
-  const isReadMore = question.description.length > 90
+  const isReadMore = question.description.length > 90;
   return (
     <div className="question question-card box-shadow1">
       <UserCard user={question.askedBy} />
       <div className="question-card__wrapper">
         <div className="question-card__title">{question.title}</div>
 
-        {
-          question.description &&
-          <div className="question-card__description"
-          dangerouslySetInnerHTML={{ __html: Filter.truncateTxt(question.description, readMoreLen) }}
-         />
-        }
-        {
-          (question.description && isReadMore) && <span className="read-more">Read more</span>
-        }
+        {question.description && (
+          <div
+            className="question-card__description"
+            dangerouslySetInnerHTML={{
+              __html: Filter.truncateTxt(question.description, readMoreLen),
+            }}
+          />
+        )}
+        {question.description && isReadMore && (
+          <div className="read-more">Read more</div>
+        )}
 
         <div className="feed__meta">
           <div className="feed__answered_by">

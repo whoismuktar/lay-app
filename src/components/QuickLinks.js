@@ -3,6 +3,7 @@ import { BiHomeAlt } from "react-icons/bi";
 import { IoBookmarksOutline } from "react-icons/io5";
 import { FiHash, FiTrendingUp } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { GrNotification } from "react-icons/gr";
 
 const links = [
   {
@@ -10,6 +11,12 @@ const links = [
     path: "/",
     query: "home",
     icon: <BiHomeAlt />
+  },
+  {
+    title: "Notifications",
+    path: "/notifications",
+    query: "notification",
+    icon: <GrNotification />
   },
   {
     title: "Top Questions",
