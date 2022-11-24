@@ -2,6 +2,7 @@ import React from "react";
 import { BiHomeAlt } from "react-icons/bi";
 import { IoBookmarksOutline } from "react-icons/io5";
 import { FiHash, FiTrendingUp } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const links = [
   {
@@ -74,7 +75,11 @@ const QuickLinks = () => {
                   <span className="app__icon quicklinks__ul__list__icon">
                     {link.icon && link.icon}
                   </span>
-                  <span className="quicklinks__title">{link.title}</span>
+                  <span className="quicklinks__title">
+                    <Link to={link.path}>
+                      {link.title}
+                    </Link>
+                  </span>
                 </div>
 
                 <div className="item__listing">

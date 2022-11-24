@@ -20,6 +20,11 @@ li {
   list-style: none;
 }
 
+.allChildrenCenter {
+  display: grid;
+  place-items: center;
+}
+
 .dflex {
   display: flex;
 }
@@ -119,4 +124,20 @@ li {
     font-size: 11px;
     font-weight: 700;
   }
+}
+
+button {
+  border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: #34A1C7;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    
+    .btn-icon {
+      margin-right: 5px;
+    }
 }
