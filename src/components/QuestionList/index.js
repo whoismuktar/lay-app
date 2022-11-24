@@ -1,5 +1,5 @@
 import React from "react";
-import QuestionCard from "./QuestionCard"
+import QuestionCard from "./QuestionCard";
 
 const mainFeed = [
   {
@@ -120,7 +120,7 @@ function QuestionList(props) {
   return (
     <div className="questions">
       {mainFeed.map((question, i) => {
-        return <QuestionCard key={i} question={question} idx={i} /> ;
+        return <QuestionCard key={i} question={question} idx={i} />;
       })}
     </div>
   );

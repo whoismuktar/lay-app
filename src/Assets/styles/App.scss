@@ -72,6 +72,7 @@ main {
 
 .sidebar {
   padding: 10px;
+  padding-top: 20px;
   min-height: 100vh;
   box-sizing: border-box;
   position: sticky;
@@ -91,6 +92,13 @@ main {
     padding: 20px;
     border-radius: 16px;
   }
+
+
+  &__more {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 }
 
 .tags {
@@ -107,6 +115,22 @@ main {
       font-size: 12px;
       font-weight: 500;
       color: #777777;
+    }
+  }
+}
+
+.users-list {
+  .user {
+    margin-bottom: 10px;
+
+    .user-card {
+      width: 30px !important;
+      height: 30px !important;
+      border-radius: 10px;
+    }
+
+    &__fullname {
+      font-weight: 500;
     }
   }
 }
@@ -242,4 +266,5 @@ main {
   font-style: italic;
   font-size: 13px;
   font-weight: 600;
+  cursor: pointer;
 }
