@@ -101,8 +101,8 @@ function Feed({ feed, i }) {
           <Divider orientation="center" plain className="qa-divider">
             <div onClick={openNow} className="inner">
               <span className="__text">Lay Answers</span>
-              <GrDown className="__icon" />
-              {/* <HiOutlineChevronRight className="__icon" /> */}
+              { openAnswers ? <GrDown className="__icon" /> :
+              <HiOutlineChevronRight className="__icon" />}
             </div>
           </Divider>
 
