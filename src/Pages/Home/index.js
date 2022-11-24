@@ -119,7 +119,7 @@ const mainFeed = [
 function Home(props) {
   return (
     <div className="home">
-      <div className="feeds">
+      <div className="feeds page">
         {mainFeed.map((feed, i) => (
           <Feed feed={feed} key={i} />
         ))}
