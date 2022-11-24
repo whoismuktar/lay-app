@@ -1,0 +1,37 @@
+.errors {
+  &.light {
+    background-color: #d3f3f369;
+  }
+}
+
+.not-found {
+  height: 100vh;
+
+  &__wrapper {
+    text-align: center;
+    background: #fff;
+    border-radius: 50%;
+    height: 350px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+      font-size: 6em;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #026178;
+    }
+    .subtitle {
+      font-size: 1.3em;
+      font-weight: 500;
+    }
+    
+    .footnote {
+      width: 60%;
+      margin: 35px auto;
+    }
+  }
+}
