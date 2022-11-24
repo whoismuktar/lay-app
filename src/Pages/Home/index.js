@@ -123,6 +123,23 @@ function Home(props) {
         {mainFeed.map((feed, i) => (
           <Feed feed={feed} key={i} />
         ))}
+
+        {/* test duplicate below */}
+        {mainFeed.map((feed, i) => (
+          <Feed feed={feed} key={i} />
+        ))}
+        {mainFeed.map((feed, i) => (
+          <Feed feed={feed} key={i} />
+        ))}
+        {mainFeed.map((feed, i) => (
+          <Feed feed={feed} key={i} />
+        ))}
+        {mainFeed.map((feed, i) => (
+          <Feed feed={feed} key={i} />
+        ))}
+        {mainFeed.map((feed, i) => (
+          <Feed feed={feed} key={i} />
+        ))}
       </div>
     </div>
   );
