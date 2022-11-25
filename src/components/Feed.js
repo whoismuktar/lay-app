@@ -13,6 +13,7 @@ import UserCard from "./UserCard";
 import UserCardGroup from "./UserCardGroup";
 import InputBox from "./InputBox";
 import ReplyThread from "./ReplyThread";
+import { Link } from "react-router-dom";
 
 function Feed({ feed, i, collapse }) {
   const answers = feed.answers;
@@ -36,7 +37,9 @@ function Feed({ feed, i, collapse }) {
       </div>
 
       <div className="feed__wrapper">
-        <div className="feed__title">{feed.title}</div>
+        <div className="feed__title">
+          <Link to="question/slug">{feed.title}</Link>
+        </div>
 
         <div className="feed__top">
           <div className="feed__asked_by_avatar">

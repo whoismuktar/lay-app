@@ -22,10 +22,11 @@ const users = [
     profileImage: null,
   },
   {
-    username: "princess",
-    firstName: "Castle",
-    lastName: "Bearer",
-    profileImage: null,
+    username: "emma",
+    firstName: "Emma",
+    lastName: "Mia",
+    profileImage: require("../Assets/images/avatar2.jpeg"),
+    bio: "A food enthusiast",
   },
   {
     username: "princess",
