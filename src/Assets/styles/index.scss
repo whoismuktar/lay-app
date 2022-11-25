@@ -67,6 +67,10 @@ li {
   }
 }
 
+.text-center {
+  text-align: center;
+}
+
 .box-shadow1 {
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(166, 173, 201, 0.2);
@@ -104,6 +108,29 @@ li {
   }
 }
 
+.profile-card {
+  text-align: center;
+
+  &__image {
+    @extend .user-card;
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50%;
+    margin: 10px auto;
+  }
+
+  &__fullname {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  &__bio {
+    color: #777777;
+    font-size: 14px;
+    margin: 6px 0 17px;
+  }
+}
+
 .user-card-group {
   position: relative;
   display: flex;
@@ -133,16 +160,33 @@ li {
 
 button {
   border: 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background: #34A1C7;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    cursor: pointer;
-    
-    .btn-icon {
-      margin-right: 5px;
-    }
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #34A1C7;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+  
+  .btn-icon {
+    margin: 0 5px;
+  }
+}
+
+
+.app-btn {
+  background-color: #A98583;
+  color: #ffffff;
+  font-weight: 500;
+
+  .btn-icon--after {
+    margin-left: 5px;
+    margin-top: 2px;
+  }
+
+  &:hover {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
 }

@@ -1,11 +1,18 @@
 import React from "react";
 import { useMatch } from "react-router-dom";
+import ProfileCard from "../../ProfileCard";
 import TagList from "../../TagList";
 import UserList from "../../UserList";
 
 const RightSideBar = () => {
   const isHome = useMatch({
     path: "/",
+    end: true,
+    caseSensitive: true,
+  });
+
+  const isSingleQuestion = useMatch({
+    path: "/question/:slug",
     end: true,
     caseSensitive: true,
   });
@@ -20,11 +27,20 @@ const RightSideBar = () => {
           </div>
         </>
       )}
-      
-      <div className="sidebar__card">
-        <div className="sidebar__title">Top Contributors</div>
-        <UserList truncate />
-      </div>
+
+      {!isSingleQuestion && (
+        <div className="sidebar__card">
+          <div className="sidebar__title">Top Contributors</div>
+          <UserList truncate />
+        </div>
+      )}
+
+      {isSingleQuestion && (
+        <div className="sidebar__card">
+          <div className="sidebar__title text-center">Top Contributor</div>
+          <ProfileCard />
+        </div>
+      )}
     </div>
   );
 };

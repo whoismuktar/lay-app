@@ -22,10 +22,11 @@ const feed = {
         title: "Question is a request to an information",
       },
       user: {
-        username: "dexter",
-        firstName: "Jamal",
-        lastName: "Da Conquerer",
-        profileImage: require("../Assets/images/conquerer.jpeg"),
+        username: "emma",
+        firstName: "Emma",
+        lastName: "Mia",
+        profileImage: require("../Assets/images/avatar2.jpeg"),
+        bio: "A food enthusiast",
       },
       replies: [
         {

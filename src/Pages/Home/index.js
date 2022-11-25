@@ -83,7 +83,7 @@ const mainFeed = [
           username: "mario",
           firstName: "Mr",
           lastName: "Warner",
-          profileImage: require("../../Assets/images/conquerer.jpeg"),
+          profileImage: require("../../Assets/images/avatar2.jpeg"),
         },
       },
       {
