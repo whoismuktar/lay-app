@@ -82,6 +82,12 @@ function TagList({ truncate, len = 5 }) {
           More
         </div>
       )}
+
+      {((tagsBank.length > len && tagsBank.length === list.length)) && (
+        <div className="sidebar__more" onClick={() => expand(3)}>
+          See All
+        </div>
+      )}
     </>
   );
 }

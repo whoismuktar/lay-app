@@ -80,6 +80,12 @@ function UserList({ truncate, len = 5 }) {
           More
         </div>
       )}
+
+      {((users.length > len && users.length === list.length)) && (
+        <div className="sidebar__more" onClick={() => expand(3)}>
+          See All
+        </div>
+      )}
     </>
   );
 }
