@@ -10,30 +10,36 @@ const links = [
     title: "Home",
     path: "/",
     query: "home",
-    icon: <BiHomeAlt />
+    icon: <BiHomeAlt />,
+    notifier: false,
   },
   {
     title: "Notifications",
     path: "/notifications",
     query: "notification",
-    icon: <GrNotification />
+    icon: <GrNotification />,
+    notifier: true,
+    isNew: true,
   },
   {
     title: "Top Questions",
     path: "/top-questions",
     query: "topQuestion",
-    icon: <FiTrendingUp />
+    icon: <FiTrendingUp />,
+    notifier: false,
   },
   {
     title: "Trending Questions",
     path: "/trending-questions",
     query: "trendingQuestion",
-    icon: <FiHash />
+    icon: <FiHash />,
+    notifier: false,
   },
   {
     title: "Your Bookmarks",
     path: "/bookmarks",
-    icon: <IoBookmarksOutline />
+    icon: <IoBookmarksOutline />,
+    notifier: false,
   },
 ];
 
@@ -77,15 +83,23 @@ const QuickLinks = () => {
         {
           links.map((link, i)=> {
             return (
-              <li key={i} className="align-center quicklinks__ul__list">
+              <li key={i} className="align-center quicklinks__ul__list" id={link.query}>
                 <div className="align-center">
                   <span className="app__icon quicklinks__ul__list__icon">
                     {link.icon && link.icon}
+                    {
+                      link.notifier &&
+                      <span className="notifier"></span>
+                    }
                   </span>
-                  <span className="quicklinks__title">
+                  <span className="quicklinks__title align-center">
                     <Link to={link.path}>
                       {link.title}
                     </Link>
+
+                    {
+                      link.isNew && <span className="new-label">New</span>
+                    }
                   </span>
                 </div>
 
