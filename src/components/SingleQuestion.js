@@ -1,5 +1,6 @@
 import React from "react";
 import Feed from "./Feed";
+import AskQuestion from "./Question/AskQuestion";
 
 const feed = {
   id: 1,
@@ -139,6 +140,7 @@ function SingleQuestion(props) {
   return (
     <div className="question single-question page">
       <Feed feed={feed} collapse />
+      <AskQuestion />
     </div>
   );
 }

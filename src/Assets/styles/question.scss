@@ -15,4 +15,65 @@
       margin-bottom: 12px;
     }
   }
+
+  &.ask-question {
+    background: red;
+    &__title {
+      margin-bottom: 10px;
+    }
+  }
+}
+.app-editor {
+  display: block;
+
+  .ask-question__title {
+    margin-bottom: 10px;  
+  }
+
+  .editor-item {
+    height: 240px;
+    overflow: auto;
+
+    .public-DraftEditor-content {
+      /* width */
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
 }
