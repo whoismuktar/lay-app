@@ -91,6 +91,11 @@ main {
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 16px;
+
+    &.plain {
+      background-color: transparent;
+      box-shadow: none;
+    }
   }
 
 

@@ -10,8 +10,6 @@ const RightSideBar = () => {
     caseSensitive: true,
   });
 
-  const truncateList = () => {}
-
   return (
     <div className="sidebar right-sidebar">
       {isHome && (
