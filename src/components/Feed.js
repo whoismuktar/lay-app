@@ -14,11 +14,11 @@ import UserCardGroup from "./UserCardGroup";
 import InputBox from "./InputBox";
 import ReplyThread from "./ReplyThread";
 
-function Feed({ feed, i }) {
+function Feed({ feed, i, collapse }) {
   const answers = feed.answers;
   const userGroup = answers.map((ans) => ans.user);
 
-  const [ openAnswers, setOpenAnswers] = useState();
+  const [ openAnswers, setOpenAnswers] = useState(!!collapse);
   const openNow = () => {
     setOpenAnswers(!openAnswers);
   }
