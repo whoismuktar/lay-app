@@ -9,6 +9,19 @@ body {
   overflow-x: hidden;
 }
 
+
+
+// Ant Default START
+.ant-popconfirm-message {
+  .question-tips {
+    font-size: 11px !important;
+  }
+}
+.ant-popconfirm-buttons {
+  display: none !important;
+}
+// Ant Default END
+
 ::-webkit-scrollbar {
   width: 2px;
 }
@@ -43,6 +56,7 @@ a {
 
 ul {
   padding: 0;
+  margin: 0;
 }
 li {
   list-style: none;
@@ -195,6 +209,9 @@ button {
   .btn-icon {
     margin: 0 5px;
   }
+}
+.after-icon {
+  margin: 0 5px;
 }
 
 

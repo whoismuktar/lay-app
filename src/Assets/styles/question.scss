@@ -70,6 +70,11 @@
       letter-spacing: -1px;
       font-weight: 500;
       color: #c3c2c8;
+
+      .after-icon {
+        color: #777777;
+        margin-top: 3px;
+      }
     }
 
     textarea {
@@ -99,7 +104,6 @@
     }
   }
 
-
   .editor-item {
     height: 200px;
     overflow: auto;
@@ -114,6 +118,12 @@
       }
     &::-webkit-scrollbar {
       display: none;
+    }
+  }
+
+  &-tips {
+    &.tooltip {
+      font-size: 11px !important;
     }
   }
 }

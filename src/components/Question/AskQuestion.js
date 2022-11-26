@@ -1,4 +1,4 @@
-import { Button, Input, Modal } from "antd";
+import { Button, Input, Modal, Popconfirm } from "antd";
 import React, { useEffect, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import editorToolbar from "../../Config/editorToolbar";
@@ -8,6 +8,8 @@ import draftToHtml from "draftjs-to-html";
 import { FiImage } from "react-icons/fi";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { GoMention } from "react-icons/go";
+import { GrCircleInformation } from "react-icons/gr";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 
 function AskQuestion({ modalActive = false, askUser }) {
   const [isModalActive, setIsModalActive] = useState(!modalActive);
@@ -74,6 +76,16 @@ function AskQuestion({ modalActive = false, askUser }) {
     );
   };
 
+  const QuestionTips = () => {
+    return (
+      <ul className="question-tips tooltip">
+        <li>Make sure your question has not been asked already</li>
+        <li>Keep your question short and to the point</li>
+        <li>Double-check grammar and spelling</li>
+      </ul>
+    );
+  };
+
   return (
     <div className="question ask-question">
       <Modal
@@ -87,6 +99,7 @@ function AskQuestion({ modalActive = false, askUser }) {
           type: "text",
         }}
         footer={[<LeftFooter />, <RightFooter />]}
+        destroyOnClose
       >
         <div className="input__wrapper input__wrapper--bottom-border">
           {askUser && (
@@ -94,7 +107,18 @@ function AskQuestion({ modalActive = false, askUser }) {
               <span>Ask Emma</span>
             </div>
           )}
-          <div className="intro-label">Ask for a lay answer</div>
+          <div className="intro-label align-center">
+            <span>Ask for a lay answer</span>
+            <Popconfirm
+              className="question-tip"
+              placement="right"
+              title={QuestionTips}
+              showCancel={false}
+              okText="Got it"
+            >
+              <IoMdInformationCircleOutline className="after-icon" />
+            </Popconfirm>
+          </div>
           <TextArea
             className="ask-question__title"
             maxLength={70}
