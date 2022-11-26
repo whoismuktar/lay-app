@@ -1,10 +1,13 @@
-import { Input, Modal } from "antd";
+import { Button, Input, Modal } from "antd";
 import React, { useEffect, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import editorToolbar from "../../Config/editorToolbar";
 import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { EditorState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
+import { FiImage } from "react-icons/fi";
+import { MdOutlineEmojiEmotions } from "react-icons/md";
+import { GoMention } from "react-icons/go";
 
 function AskQuestion({ modalActive = false }) {
   const [isModalActive, setIsModalActive] = useState(!modalActive);
@@ -25,35 +28,88 @@ function AskQuestion({ modalActive = false }) {
     });
   };
 
+  const removeLineBreak = (e) => {
+      if(e.key === 'Enter') {
+        e.preventDefault()
+      }
+  }
+
+  
+  // remove any detected linebreak
+  useEffect(() => {
+    const isLineBreak = title.match(/\n/g)
+    if (isLineBreak) {
+      setTitle(title.replaceAll("\n", ""))
+    }
+  }, [title]);
+
   useEffect(() => {
     console.log(description);
   }, [description]);
+
+  const TextArea = Input.TextArea;
+
+  const LeftFooter = () => {
+    return (
+      <div className="modal-left-footer">
+        <FiImage />
+
+        <MdOutlineEmojiEmotions />
+        <GoMention />
+      </div>
+    )
+  }
+  const RightFooter = () => {
+    return (
+      <div className="modal-right-footer">
+        <Button type="text" style={{fontWeight: 500}}>Cancel</Button>
+        <Button className="app-btn">Ask</Button>
+      </div>
+    )
+  }
 
   return (
     <div className="question ask-question">
       <Modal
         open={isModalActive}
         wrapClassName="app-editor"
+        style={{ top: "30%" }}
         className="app-modal"
-        bodyStyle={{ height: "300px" }}
         closable={false}
+        okText="Ask"
+        cancelButtonProps={{
+          type: "text",
+        }}
+        footer={[
+          <LeftFooter />,
+          <RightFooter />,
+        ]}
       >
-        <Input
-          className="ask-question__title"
-          maxLength={70}
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+        <div className="input__wrapper input__wrapper--bottom-border">
+          <div className="intro-label">Ask for a lay answer</div>
+          <TextArea
+            className="ask-question__title"
+            maxLength={70}
+            placeholder="Question of the day?"
+            autoSize={{
+              minRows: 1,
+              maxRows: 3,
+            }}
+            value={title}
+            bordered={false}
+            onChange={(e) => setTitle(e.target.value)}
+            onKeyPress={removeLineBreak}
+          />
+        </div>
 
-        <Editor
+        {/* <Editor
           editorState={description.editorState}
           onEditorStateChange={onEditorStateChange}
           toolbar={editorToolbar}
           wrapperClassName="editor-wrapper"
           editorClassName="editor-item"
           placeholder="hello placeholder"
-        />
+        /> */}
       </Modal>
     </div>
   );

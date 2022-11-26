@@ -148,7 +148,6 @@ main {
   // background-color: red;
 }
 
-
 .new-label {
   font-size: 10px !important;
   background: #A98583;
@@ -233,6 +232,13 @@ main {
       cursor: pointer;
       color: green;
     }
+  }
+}
+
+
+.input__wrapper {
+  &--bottom-border {
+    border-bottom: 1px solid #d3d2d5;
   }
 }
 

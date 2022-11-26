@@ -26,9 +26,53 @@
 .app-editor {
   display: block;
 
-  .ask-question__title {
-    margin-bottom: 10px;  
+  .ant-modal-content {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+
+    .ant-modal-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+
+      .modal-left-footer {
+        * {
+          margin: 0 4px;
+          font-size: 18px;
+          color: #777777;
+          cursor: pointer;
+        }
+      }
+    }
   }
+
+  .input__wrapper {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    .intro-label {
+      font-size: 13px;
+      letter-spacing: -1px;
+      font-weight: 500;
+      color: #c3c2c8;
+    }
+
+    textarea {
+      padding: 4px 0;
+      font-weight: 500;
+      color: #5d5d5f;
+      font-size: 20px;
+      letter-spacing: -1px;
+      
+      &::placeholder {
+        font-weight: 500;
+        color: #5d5d5f;
+      }
+    }
+  }
+
 
   .editor-item {
     height: 200px;
@@ -43,23 +87,7 @@
         }
       }
     &::-webkit-scrollbar {
-      width: 2px;
       display: none;
-    }
-
-    /* Track */
-    &::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-      background: #888;
-    }
-
-    /* Handle on hover */
-    &::-webkit-scrollbar-thumb:hover {
-      background: #555;
     }
   }
 }
