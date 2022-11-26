@@ -29,7 +29,11 @@ function Reply({ comment }) {
             <div>
               <span className="user__name">
                 {Filter.getFullName(comment.user)}
-                {comment.replies && comment.replies.length}
+                {/*
+                  TODO
+                  Implement nested replies
+                  {comment.replies && comment.replies.length}
+                */}
               </span>
               <div className="comment__answered_date comment__time">
                 {Filter.formatDateFromNowShort(new Date())} ago

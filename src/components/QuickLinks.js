@@ -93,7 +93,10 @@ const QuickLinks = () => {
                     }
                   </span>
                   <span className="quicklinks__title align-center">
-                    <Link to={link.path}>
+                    <Link to={{
+                      pathname: link.path,
+                      state: { customData: {} }
+                    }}>
                       {link.title}
                     </Link>
 
