@@ -11,6 +11,7 @@ import { GoMention } from "react-icons/go";
 
 function AskQuestion({ modalActive = false }) {
   const [isModalActive, setIsModalActive] = useState(!modalActive);
+  const [editorActive, setEditorActive] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState({
     htmlValue: "<p></p>\n",
@@ -29,17 +30,16 @@ function AskQuestion({ modalActive = false }) {
   };
 
   const removeLineBreak = (e) => {
-      if(e.key === 'Enter') {
-        e.preventDefault()
-      }
-  }
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
 
-  
   // remove any detected linebreak
   useEffect(() => {
-    const isLineBreak = title.match(/\n/g)
+    const isLineBreak = title.match(/\n/g);
     if (isLineBreak) {
-      setTitle(title.replaceAll("\n", ""))
+      setTitle(title.replaceAll("\n", ""));
     }
   }, [title]);
 
@@ -57,16 +57,18 @@ function AskQuestion({ modalActive = false }) {
         <MdOutlineEmojiEmotions />
         <GoMention />
       </div>
-    )
-  }
+    );
+  };
   const RightFooter = () => {
     return (
       <div className="modal-right-footer">
-        <Button type="text" style={{fontWeight: 500}}>Cancel</Button>
+        <Button type="text" style={{ fontWeight: 500 }}>
+          Cancel
+        </Button>
         <Button className="app-btn">Ask</Button>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div className="question ask-question">
@@ -80,10 +82,7 @@ function AskQuestion({ modalActive = false }) {
         cancelButtonProps={{
           type: "text",
         }}
-        footer={[
-          <LeftFooter />,
-          <RightFooter />,
-        ]}
+        footer={[<LeftFooter />, <RightFooter />]}
       >
         <div className="input__wrapper input__wrapper--bottom-border">
           <div className="intro-label">Ask for a lay answer</div>
@@ -102,14 +101,36 @@ function AskQuestion({ modalActive = false }) {
           />
         </div>
 
-        {/* <Editor
-          editorState={description.editorState}
-          onEditorStateChange={onEditorStateChange}
-          toolbar={editorToolbar}
-          wrapperClassName="editor-wrapper"
-          editorClassName="editor-item"
-          placeholder="hello placeholder"
-        /> */}
+        <div className="show-description">
+          {!editorActive && (
+            <span
+              className="collapse-editor"
+              onClick={() => setEditorActive(true)}
+            >
+              Give More Details?
+            </span>
+          )}
+
+          {editorActive && (
+            <span
+              className="collapse-editor"
+              onClick={() => setEditorActive(false)}
+            >
+              Ignore Details?
+            </span>
+          )}
+        </div>
+
+        {editorActive && (
+          <Editor
+            editorState={description.editorState}
+            onEditorStateChange={onEditorStateChange}
+            toolbar={editorToolbar}
+            wrapperClassName="editor-wrapper"
+            editorClassName="editor-item"
+            placeholder="Keep it simple"
+          />
+        )}
       </Modal>
     </div>
   );
