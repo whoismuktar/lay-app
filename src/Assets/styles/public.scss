@@ -1,0 +1,16 @@
+.public__view {
+  background-color: red;
+
+}
+.app-footer {
+  position: fixed;
+  // position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 60px;   /* Height of the footer */
+  background: #6cf;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

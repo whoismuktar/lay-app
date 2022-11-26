@@ -1,14 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home"
-import Layout from "./components/Layout";
+import AuthLayout from "./components/Layout/AuthLayout";
+import PublicLayout from "./components/Layout/PublicLayout";
 import NotFound from "./components/Errors/NotFound";
 import TopQuestions from "./components/TopQuestions";
 import SingleQuestion from "./components/SingleQuestion";
+import Auth from "./Pages/Auth"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <AuthLayout />,
     children: [
       {
         path: "/",
@@ -22,6 +24,17 @@ const router = createBrowserRouter([
         path: "/question/:slug",
         element: <SingleQuestion />
       },
+    ]
+  },
+  {
+    path: "/welcome",
+    element: <PublicLayout /> ,
+    children: [
+
+      {
+        path: "/welcome",
+        element: <Auth />
+      }
     ]
   },
   {
