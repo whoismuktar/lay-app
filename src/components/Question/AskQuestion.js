@@ -9,7 +9,7 @@ import { FiImage } from "react-icons/fi";
 import { MdOutlineEmojiEmotions } from "react-icons/md";
 import { GoMention } from "react-icons/go";
 
-function AskQuestion({ modalActive = false }) {
+function AskQuestion({ modalActive = false, askUser }) {
   const [isModalActive, setIsModalActive] = useState(!modalActive);
   const [editorActive, setEditorActive] = useState(false);
   const [title, setTitle] = useState("");
@@ -17,6 +17,10 @@ function AskQuestion({ modalActive = false }) {
     htmlValue: "<p></p>\n",
     editorState: EditorState.createEmpty(),
   });
+
+  const placeholder = askUser
+    ? `Ask ${askUser.firstName} a question?`
+    : "Question of the day?";
 
   const onEditorStateChange = (editorValue) => {
     const editorStateInHtml = draftToHtml(
@@ -85,11 +89,16 @@ function AskQuestion({ modalActive = false }) {
         footer={[<LeftFooter />, <RightFooter />]}
       >
         <div className="input__wrapper input__wrapper--bottom-border">
+          {askUser && (
+            <div className="ask-user">
+              <span>Ask Emma</span>
+            </div>
+          )}
           <div className="intro-label">Ask for a lay answer</div>
           <TextArea
             className="ask-question__title"
             maxLength={70}
-            placeholder="Question of the day?"
+            placeholder={placeholder}
             autoSize={{
               minRows: 1,
               maxRows: 3,

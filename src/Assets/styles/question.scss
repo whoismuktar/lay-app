@@ -52,6 +52,19 @@
     margin-bottom: 5px;
     padding-bottom: 10px;
 
+    .ask-user {
+      margin-bottom: 14px;
+      span {
+        padding: 3px 13px;
+        border-radius: 100px;
+        font-size: 17px;
+        letter-spacing: -1px;
+        font-weight: 700;
+        color: #ffffff;
+        background: #F25E74;
+      }
+    }
+
     .intro-label {
       font-size: 13px;
       letter-spacing: -1px;
@@ -68,7 +81,7 @@
       
       &::placeholder {
         font-weight: 500;
-        color: #5d5d5f;
+        color: #5d5d5fba;
       }
     }
   }
