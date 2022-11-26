@@ -76,6 +76,9 @@ li {
   list-style: none;
 }
 
+.cursorPointer {
+  cursor: pointer;
+}
 .allChildrenCenter {
   display: grid;
   place-items: center;
@@ -226,6 +229,9 @@ button {
 }
 .after-icon {
   margin: 0 5px;
+}
+.before-icon {
+  margin-right: 5px;
 }
 
 

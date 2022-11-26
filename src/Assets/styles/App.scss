@@ -105,22 +105,22 @@ main {
     font-weight: 600;
     cursor: pointer;
   }
-}
 
-.tags {
-  .tag {
-    margin-bottom: 10px;
-    cursor: pointer;
-    width: fit-content;
-
-    &__title {
-      font-weight: 500;
-      line-height: 2;
-    }
-    &__subtitle {
-      font-size: 12px;
-      font-weight: 500;
-      color: #777777;
+  .tags {
+    .tag {
+      margin-bottom: 10px;
+      cursor: pointer;
+      width: fit-content;
+  
+      &__title {
+        font-weight: 500;
+        line-height: 2;
+      }
+      &__subtitle {
+        font-size: 12px;
+        font-weight: 500;
+        color: #777777;
+      }
     }
   }
 }
