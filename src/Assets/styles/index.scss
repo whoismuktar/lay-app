@@ -79,6 +79,11 @@ li {
 .cursorPointer {
   cursor: pointer;
 }
+
+.width100 {
+  width: 100%
+}
+
 .allChildrenCenter {
   display: grid;
   place-items: center;

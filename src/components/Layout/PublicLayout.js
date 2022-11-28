@@ -11,7 +11,9 @@ function AuthLayout() {
   const [hideFooter, setHideFooter] = useState(false);
   
   useEffect(() => {
-    const hideFooterList = ["welcome"];
+    const hideFooterList = [];
+    // const hideFooterList = ["welcome"];
+
     if (hideFooterList.includes(currentRoute)) {
       setHideFooter(true)
     }
