@@ -1,5 +1,6 @@
 import React from "react";
 import Feed from "../../components/Feed";
+import QuestionInput from "../../components/Question/QuestionInput";
 
 const mainFeed = [
   {
@@ -252,6 +253,7 @@ function Home(props) {
   return (
     <div className="home">
       <div className="feeds page">
+        <QuestionInput />
         {mainFeed.map((feed, i) => (
           <Feed feed={feed} key={i} />
         ))}
