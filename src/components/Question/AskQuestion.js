@@ -13,83 +13,16 @@ import {
   IoMdInformationCircleOutline,
 } from "react-icons/io";
 import { AiFillTags } from "react-icons/ai";
+import QuestionInput from "./QuestionInput";
 
 function AskQuestion({ modalActive = false, askUser }) {
   const [isModalActive, setIsModalActive] = useState(!modalActive);
   const [editorActive, setEditorActive] = useState(false);
-  const [addOwnTag, setAddOwnTag] = useState(false);
-  const [questionTags, setQuestionTags] = useState([]);
-  const [title, setTitle] = useState("");
   const [description, setDescription] = useState({
     htmlquery: "<p></p>\n",
     editorState: EditorState.createEmpty(),
   });
 
-  const getTagsBank = () => {
-    const tags = [
-      {
-        title: "Jollof Rice",
-        count: 40000,
-        value: "JollofRice",
-      },
-      {
-        title: "Cuisine",
-        count: 40000,
-        value: "Cuisine",
-      },
-      {
-        title: "Anime",
-        count: 40000,
-        value: "Anime",
-      },
-      {
-        title: "Movies",
-        count: 40000,
-        value: "Movies",
-      },
-      {
-        title: "Politics",
-        count: 40000,
-        value: "Politics",
-      },
-      {
-        title: "Elon Musk",
-        count: 40000,
-        value: "ElonMusk",
-      },
-      {
-        title: "World Cup",
-        count: 40000,
-        value: "WorldCup",
-      },
-      {
-        title: "JavaScript",
-        count: 40000,
-        value: "JavaScript",
-      },
-      {
-        title: "Hollywood",
-        count: 40000,
-        value: "Hollywood",
-      },
-      {
-        title: "Photography",
-        count: 40000,
-        value: "Photography",
-      },
-      {
-        title: "Afrobeats",
-        count: 40000,
-        value: "Afrobeats",
-      },
-    ];
-
-    return tags.map((tag) => ({ ...tag, ...{ label: tag.title } }));
-  };
-  const [tagsBank, setTagsBank] = useState(getTagsBank);
-  const [tagVal, setTagVal] = useState("");
-
-  const onTagValClear = () => setTagVal("");
 
   const placeholder = askUser
     ? `Ask ${askUser.firstName} a question?`
@@ -106,33 +39,6 @@ function AskQuestion({ modalActive = false, askUser }) {
     });
   };
 
-  const removeLineBreak = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-    }
-  };
-
-  const onTagSearch = (value) => {
-    setTagVal(value);
-  };
-  const onTagSelect = (value, tag) => {
-    if (!questionTags.includes(value)) {
-      setQuestionTags([...questionTags, tag]);
-      setAddOwnTag(false);
-
-      onTagValClear();
-    }
-  };
-
-  // remove any detected linebreak
-  useEffect(() => {
-    const isLineBreak = title.match(/\n/g);
-    if (isLineBreak) {
-      setTitle(title.replaceAll("\n", ""));
-    }
-  }, [title]);
-
-  const TextArea = Input.TextArea;
 
   const LeftFooter = () => {
     return (
@@ -180,7 +86,7 @@ function AskQuestion({ modalActive = false, askUser }) {
         footer={[<LeftFooter />, <RightFooter />]}
         destroyOnClose
       >
-        <div className="input__wrapper input__wrapper--bottom-border">
+        <div className="input__wrapper">
           {askUser && (
             <div className="ask-user">
               <span>Ask Emma</span>
@@ -200,59 +106,7 @@ function AskQuestion({ modalActive = false, askUser }) {
             </Popconfirm>
           </div>
 
-          <TextArea
-            className="ask-question__title"
-            maxLength={70}
-            placeholder={placeholder}
-            autoSize={{
-              minRows: 1,
-              maxRows: 3,
-            }}
-            value={title}
-            bordered={false}
-            onChange={(e) => setTitle(e.target.value)}
-            onKeyPress={removeLineBreak}
-          />
-        </div>
-
-        <div className="ask-question-tags align-center">
-          <AiFillTags className="before-icon" />
-          {questionTags.map((tag, i) => {
-            return (
-              <span className="ask-question-tag">
-                <Tag closable className="app-tag">
-                  {tag.title}
-                </Tag>
-              </span>
-            );
-          })}
-
-          <span className="ask-question-tag">
-            {addOwnTag && (
-              <AutoComplete
-                options={tagsBank}
-                style={{
-                  width: 100,
-                  height: 27
-                }}
-                onSearch={onTagSearch}
-                onSelect={onTagSelect}
-                placeholder="search tag"
-                value={tagVal}
-                allowClear={onTagValClear}
-                filterOption={(inputValue, tag) =>
-                  tag.value.toUpperCase().indexOf(inputValue.toUpperCase()) !==
-                  -1
-                }
-              />
-            )}
-            {!addOwnTag && questionTags.length < 3 && (
-              <IoIosAddCircleOutline
-                className="dflex cursorPointer"
-                onClick={() => setAddOwnTag(true)}
-              />
-            )}
-          </span>
+          <QuestionInput isComp placeholder={placeholder} />
         </div>
 
         <div className="show-description">

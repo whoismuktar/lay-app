@@ -16,6 +16,21 @@
     }
   }
 
+  &.question-input {
+    textarea {
+      padding: 4px 0;
+      font-weight: 500;
+      color: #5d5d5f;
+      font-size: 20px;
+      letter-spacing: -1px;
+      
+      &::placeholder {
+        font-weight: 500;
+        color: #5d5d5fba;
+      }
+    }
+  }
+
   &.ask-question {
     background: red;
     &__title {
@@ -76,19 +91,6 @@
         margin-top: 3px;
       }
     }
-
-    textarea {
-      padding: 4px 0;
-      font-weight: 500;
-      color: #5d5d5f;
-      font-size: 20px;
-      letter-spacing: -1px;
-      
-      &::placeholder {
-        font-weight: 500;
-        color: #5d5d5fba;
-      }
-    }
   }
 
   .show-description {
@@ -137,4 +139,13 @@
       }
     }
   }
+
+  .ask-question-tags {
+    &.is-comp {
+      border-top: 1px solid #d3d2d5;
+      margin-top: 5px;
+      padding-top: 7px;
+    }
+  }
+
 }
