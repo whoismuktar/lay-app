@@ -113,7 +113,7 @@ function QuestionInput({ placeholder, isComp = false }) {
       ].join(" ")}
     >
       {!isComp && <UserCard user={Filter.currentUser} />}
-      <div className="iinput__wrapper--bottom-border">
+      <div className="input__wrapper width100">
         <TextArea
           className="ask-question__title"
           maxLength={70}
