@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Image } from "antd";
 import { Filter } from "../Helper";
 import { BsPatchQuestionFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const userAvatar = require("../Assets/images/avatar2.jpeg");
 
 const user = {
@@ -23,7 +24,9 @@ function ProfileCard({ preview = false }) {
         />
       </div>
 
-      <div className="profile-card__fullname">{Filter.getFullName(user)}</div>
+      <Link to="/user/:ds/:dsd">
+        <div className="profile-card__fullname">{Filter.getFullName(user)}</div>
+      </Link>
       <div className="profile-card__bio">{user.bio}</div>
 
       <div className="profile-card__cta">
