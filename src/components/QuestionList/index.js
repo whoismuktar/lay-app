@@ -116,11 +116,11 @@ const mainFeed = [
   },
 ];
 
-function QuestionList(props) {
+function QuestionList({answerCardMode}) {
   return (
     <div className="questions">
       {mainFeed.map((question, i) => {
-        return <QuestionCard key={i} question={question} idx={i} />;
+        return <QuestionCard key={i} question={question} idx={i} answerCardMode={answerCardMode} />;
       })}
     </div>
   );
