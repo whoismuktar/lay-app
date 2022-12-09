@@ -125,6 +125,30 @@ main {
   }
 }
 
+.subscribe-card {
+  &__icon {
+    font-size: 60px;
+    color: #A98583;
+  }
+
+  &__intro {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #777777;
+  }
+
+  &__note {
+    font-size: 16px;
+    font-weight: 500;
+    color: #777777;
+    margin: 0px 0 10px;
+  }
+  // &__btn {
+  //   margin-top: 20px;
+  // }
+}
+
 .users-list {
   .user {
     margin-bottom: 10px;
