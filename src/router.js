@@ -6,6 +6,7 @@ import NotFound from "./components/Errors/NotFound";
 import TopQuestions from "./components/TopQuestions";
 import SingleQuestion from "./components/SingleQuestion";
 import Auth from "./Pages/Auth"
+import UserProfile from "./Pages/User"
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,17 @@ const router = createBrowserRouter([
         path: "/question/:slug",
         element: <SingleQuestion />
       },
+    ]
+  },
+  {
+    path: "/user/:userid/:username",
+    element: <AuthLayout />,
+    children: [
+
+      {
+        path: "/user/:userid/:username",
+        element: <UserProfile />
+      }
     ]
   },
   {

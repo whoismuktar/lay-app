@@ -1,0 +1,76 @@
+.user-profile {
+  
+  &__top-card {
+    .user-card {
+      width: 200px !important;
+      height: 200px !important;
+      border-radius: 50%;
+      margin-right: 25px;
+    }
+  }
+
+  &__details {
+    width: calc(100% - 250px);
+  }
+
+  &__fullname {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  &__location {
+    color: #777777;
+    font-weight: 600;
+    margin-top: 7px;
+
+    .before-icon {
+      font-size: 1.34em;
+    }
+  }
+
+  &__bio {
+    margin-top: 20px;
+    width: 90%;
+    line-height: 1.5;
+  }
+
+  &__awards {
+    margin: 40px 0;
+    overflow-x: auto;
+    justify-content: center;
+    gap: 30px;
+
+    .award {
+      text-align: center;
+
+      &-icon {
+        font-size: 25px;
+        color: #b0b4b7;
+      }
+
+      &-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #777777;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+
+    .ant-tabs {
+      width: 100%;
+    }
+    .ant-tabs-nav-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;  
+    }
+  }
+}
