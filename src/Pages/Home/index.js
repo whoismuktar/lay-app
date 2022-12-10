@@ -1,6 +1,6 @@
 import React from "react";
-import Feed from "../../components/Feed";
-import QuestionInput from "../../components/Question/QuestionInput";
+import Feed from "../../../components/Feed";
+import QuestionInput from "../../../components/Question/QuestionInput";
 
 const mainFeed = [
   {
@@ -27,7 +27,7 @@ const mainFeed = [
           username: "dexter",
           firstName: "Jamal",
           lastName: "Da Conquerer",
-          profileImage: require("../../Assets/images/conquerer.jpeg"),
+          profileImage: require("../../../Public/images/conquerer.jpeg"),
         },
         replies: [
           {
@@ -84,7 +84,7 @@ const mainFeed = [
           username: "mario",
           firstName: "Mr",
           lastName: "Warner",
-          profileImage: require("../../Assets/images/avatar2.jpeg"),
+          profileImage: require("../../../Public/images/avatar2.jpeg"),
         },
       },
       {
@@ -95,7 +95,7 @@ const mainFeed = [
           username: "dexter",
           firstName: "Jamal",
           lastName: "Da Conquerer",
-          profileImage: require("../../Assets/images/conquerer.jpeg"),
+          profileImage: require("../../../Public/images/conquerer.jpeg"),
         },
         replies: [
           {
@@ -159,7 +159,7 @@ const mainFeed = [
           username: "dexter",
           firstName: "Jamal",
           lastName: "Da Conquerer",
-          profileImage: require("../../Assets/images/conquerer.jpeg"),
+          profileImage: require("../../../Public/images/conquerer.jpeg"),
         },
         replies: [
           {
@@ -216,7 +216,7 @@ const mainFeed = [
           username: "mario",
           firstName: "Mr",
           lastName: "Warner",
-          profileImage: require("../../Assets/images/conquerer.jpeg"),
+          profileImage: require("../../../Public/images/conquerer.jpeg"),
         },
       },
     ],
@@ -231,7 +231,7 @@ const mainFeed = [
       username: "dexter",
       firstName: "Jamal",
       lastName: "Da Conquerer",
-      profileImage: require("../../Assets/images/conquerer.jpeg"),
+      profileImage: require("../../../Public/images/conquerer.jpeg"),
     },
     answers: [
       {

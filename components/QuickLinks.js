@@ -2,8 +2,8 @@ import React from "react";
 import { BiHomeAlt } from "react-icons/bi";
 import { IoBookmarksOutline } from "react-icons/io5";
 import { FiHash, FiTrendingUp } from "react-icons/fi";
-import { Link } from "react-router-dom";
 import { GrNotification } from "react-icons/gr";
+import Link from "next/link";
 
 const links = [
   {
@@ -93,12 +93,14 @@ const QuickLinks = () => {
                     }
                   </span>
                   <span className="quicklinks__title align-center">
-                    <Link to={{
+                    <Link href={link.path}>
+                      {link.title}
+                    </Link>
+                    {/* <Link to={{
                       pathname: link.path,
                       state: { customData: {} }
                     }}>
-                      {link.title}
-                    </Link>
+                    </Link> */}
 
                     {
                       link.isNew && <span className="new-label">New</span>

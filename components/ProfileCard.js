@@ -1,15 +1,15 @@
 import React from "react";
-import { Button, Image } from "antd";
+import { Button } from "antd";
 import { Filter } from "../Helper";
 import { BsPatchQuestionFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
-const userAvatar = require("../Assets/images/avatar2.jpeg");
+import Image from "next/image";
+const userAvatar = "avatar2.jpeg";
 
 const user = {
   username: "emma",
   firstName: "Emma",
   lastName: "Mia",
-  profileImage: require("../Assets/images/avatar2.jpeg"),
+  profileImage: userAvatar,
   bio: "A food enthusiast",
 };
 
@@ -18,8 +18,9 @@ function ProfileCard({ preview = false }) {
     <div className="profile-card">
       <div className="profile-card__image">
         <Image
-          src={user.profileImage ? user.profileImage : userAvatar}
-          preview={preview}
+          src={user.profileImage ? user.profileImage : appAvatar}
+          width={40}
+          height={40}
           alt={`${user.firstName}'s profile image`}
         />
       </div>

@@ -1,3 +1,6 @@
+@import "./index.scss";
+@import "./feed.module.scss";
+
 .App {
   text-align: center;
 }
@@ -126,6 +129,10 @@ main {
 }
 
 .subscribe-card {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 16px;
+
   &__icon {
     font-size: 60px;
     color: #A98583;
@@ -155,6 +162,7 @@ main {
 
     .user-card {
       width: 30px !important;
+      min-width: 30px !important;
       height: 30px !important;
       border-radius: 10px;
     }
@@ -293,8 +301,8 @@ main {
 
     .user-card {
       width: 30px !important;
+      min-width: 30px !important;
       height: 30px !important;
-      border-radius: 7px;
     }
 
     &__text {

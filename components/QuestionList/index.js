@@ -26,7 +26,7 @@ const mainFeed = [
           username: "dexter",
           firstName: "Jamal",
           lastName: "Da Conquerer",
-          profileImage: require("../../Assets/images/conquerer.jpeg"),
+          profileImage: "/images/conquerer.jpeg",
         },
         replies: [
           {
@@ -83,7 +83,7 @@ const mainFeed = [
           username: "mario",
           firstName: "Mr",
           lastName: "Warner",
-          profileImage: require("../../Assets/images/conquerer.jpeg"),
+          profileImage: "/images/conquerer.jpeg",
         },
       },
     ],
@@ -98,7 +98,7 @@ const mainFeed = [
       username: "dexter",
       firstName: "Jamal",
       lastName: "Da Conquerer",
-      profileImage: require("../../Assets/images/conquerer.jpeg"),
+      profileImage: "/images/conquerer.jpeg",
     },
     answers: [
       {
@@ -116,11 +116,18 @@ const mainFeed = [
   },
 ];
 
-function QuestionList({answerCardMode}) {
+function QuestionList({ answerCardMode }) {
   return (
     <div className="questions">
       {mainFeed.map((question, i) => {
-        return <QuestionCard key={i} question={question} idx={i} answerCardMode={answerCardMode} />;
+        return (
+          <QuestionCard
+            key={i}
+            question={question}
+            idx={i}
+            answerCardMode={answerCardMode}
+          />
+        );
       })}
     </div>
   );

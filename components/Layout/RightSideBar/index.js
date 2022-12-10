@@ -1,21 +1,22 @@
+import { useRouter } from "next/router";
 import React from "react";
-import { useMatch } from "react-router-dom";
+// import { useMatch } from "react-router-dom";
 import ProfileCard from "../../ProfileCard";
 import TagList from "../../TagList";
 import UserList from "../../UserList";
 
 const RightSideBar = () => {
-  const isHome = useMatch({
-    path: "/",
-    end: true,
-    caseSensitive: true,
-  });
+  const router = useRouter()
 
-  const isSingleQuestion = useMatch({
-    path: "/question/:slug",
-    end: true,
-    caseSensitive: true,
-  });
+  console.log({router});
+  const isHome = router.pathname = "/"
+
+  const isSingleQuestion = false
+  // const isSingleQuestion = useMatch({
+  //   path: "/question/:slug",
+  //   end: true,
+  //   caseSensitive: true,
+  // });
 
   return (
     <div className="sidebar right-sidebar">

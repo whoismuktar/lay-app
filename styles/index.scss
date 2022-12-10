@@ -147,15 +147,14 @@ li {
 }
 
 .user-card {
-  border-radius: 16px;
+  border-radius: 50%;
   object-fit: cover;
   object-position: center;
   position: relative;
-  width: 40px !important;
-  height: 40px !important;
   overflow: hidden;
   margin-right: 10px;
   background-color: #f7e0fa;
+  border-radius: 17px;
 
   img {
     object-fit: cover;

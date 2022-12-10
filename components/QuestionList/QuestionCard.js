@@ -1,26 +1,27 @@
 import React from "react";
 import { Filter } from "../../Helper";
 import UserCard from "../UserCard";
+import styles from "../../styles/question.module.scss"
 
 function QuestionCard({ question, idx, answerCardMode }) {
   const readMoreLen = 90;
   const isReadMore = question.description.length > 90;
   return (
-    <div className="question question-card box-shadow1">
+    <div className={`box-shadow1 ${styles["question"]} ${styles["question-card"]}`}>
       <UserCard user={question.askedBy} />
-      <div className="question-card__wrapper">
-        <div className="question-card__title">{question.title}</div>
+      <div className={`${styles["question-card__wrapper"]}`}>
+        <div className={`${styles["question-card__title"]}`}>{question.title}</div>
 
         {question.description && (
           <div
-            className="question-card__description"
+            className={`${styles["question-card__description"]}`}
             dangerouslySetInnerHTML={{
               __html: Filter.truncateTxt(question.description, readMoreLen),
             }}
           />
         )}
         {question.description && isReadMore && (
-          <div className="read-more">Read more</div>
+          <div className={`read-more ${styles["read-more"]}`}>Read more</div>
         )}
 
         {!answerCardMode && (

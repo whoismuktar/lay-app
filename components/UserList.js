@@ -7,7 +7,7 @@ const users = [
     username: "dexter",
     firstName: "Jamal",
     lastName: "Da Conquerer",
-    profileImage: require("../Assets/images/conquerer.jpeg"),
+    profileImage: "/images/conquerer.jpeg",
   },
   {
     username: "princess",
@@ -25,7 +25,7 @@ const users = [
     username: "emma",
     firstName: "Emma",
     lastName: "Mia",
-    profileImage: require("../Assets/images/avatar2.jpeg"),
+    profileImage: "/images/avatar2.jpeg",
     bio: "A food enthusiast",
   },
   {
@@ -38,7 +38,7 @@ const users = [
     username: "mario",
     firstName: "Mr",
     lastName: "Warner",
-    profileImage: require("../Assets/images/conquerer.jpeg"),
+    profileImage: "/images/conquerer.jpeg",
   },
   {
     username: "bisi",

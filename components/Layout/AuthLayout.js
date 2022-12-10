@@ -3,7 +3,6 @@ import LeftSideBar from "./LeftSideBar";
 import RightSideBar from "./RightSideBar";
 import NavBar from "./NavBar/index.js";
 import { Col, Row } from "antd";
-import { Outlet } from "react-router-dom";
 
 
 function AuthLayout({ children }) {
@@ -30,7 +29,8 @@ function AuthLayout({ children }) {
 
         <Col span={12} className="">
           <main>
-            <Outlet />
+            {/* <Outlet /> */}
+            {children}
           </main>
         </Col>
 

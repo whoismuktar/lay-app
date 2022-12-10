@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { Col, Row } from "antd";
-import { Outlet } from "react-router-dom";
-import useCurrentRoute from "../../Hooks/useCurrentRoute";
-import "../../Assets/styles/public.scss";
+// import useCurrentRoute from "../../Hooks/useCurrentRoute";
+import styles from "../../styles/public.module.scss";
 
-function AuthLayout() {
-  const currentRoute = useCurrentRoute();
+function AuthLayout({children}) {
+  const currentRoute = "";
   const [hideFooter, setHideFooter] = useState(false);
   
   useEffect(() => {
@@ -20,15 +19,15 @@ function AuthLayout() {
   }, [currentRoute, hideFooter]);
 
   return (
-    <div className="public-view">
-      <Row className="public-view__nav-bar">
+    <div className={styles["public-view"]}>
+      <Row className={styles["public-view__nav-bar"]}>
         <Col span={24}>
           <NavBar />
         </Col>
       </Row>
 
       <Row
-        className="public-view__content-wrapper"
+        className={styles["public-view__content-wrapper"]}
         gutter={{
           xs: 8,
           sm: 16,
@@ -38,13 +37,13 @@ function AuthLayout() {
       >
         <Col span={24}>
           <main>
-            <Outlet />
+            {children}
           </main>
         </Col>
       </Row>
 
       {!hideFooter && (
-        <Row className="public-view__footer">
+        <Row className={styles["public-view__footer"]}>
           <Col span={24}>
             <Footer />
           </Col>
