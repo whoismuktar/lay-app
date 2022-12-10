@@ -42,7 +42,8 @@ function QuestionCard({ question, idx, answerCardMode }) {
           <>
             <div className="feed__meta">
               <div className="feed__answered_by">
-                Answered by {Filter.getFullName(question.answers[0].user)} &{" "}
+                Answered by Ema Mia &{" "}
+                {/* Answered by {Filter.getFullName(question.answers[0].user)} &{" "} */}
                 {17 + (idx + 1)} more
               </div>
 

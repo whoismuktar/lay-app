@@ -3,7 +3,7 @@ import UserCard from "../../components/UserCard";
 import "../../Assets/styles/user-profile.scss";
 import { Filter } from "../../Helper";
 import { ImLocation } from "react-icons/im";
-import { BsPatchQuestion } from "react-icons/bs";
+import { BsPatchQuestion, BsStackOverflow, BsTwitter } from "react-icons/bs";
 import { HiOutlineHashtag } from "react-icons/hi";
 import { GiWhirlwind } from "react-icons/gi";
 import { Tabs } from "antd";
@@ -11,6 +11,8 @@ import { useState } from "react";
 import { BiBell } from "react-icons/bi";
 import QuestionList from "../../components/QuestionList";
 import SubscribeCard from "../../components/SubscribeCard";
+import { FaFacebook, FaFacebookF, FaQuora } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
 
 const user = {
   username: "emma",
@@ -97,6 +99,16 @@ function UserProfile(props) {
           </div>
 
           <div className="user-profile__bio">{user.about}</div>
+
+          <div className="user-profile__social">
+            <div className="feed__icons">
+                <FaFacebookF className="feed__icon" />
+                <BsTwitter className="feed__icon" />
+                <FaQuora className="feed__icon" />
+                <BsStackOverflow className="feed__icon" />
+                <FiInstagram className="feed__icon" />
+            </div>
+          </div>
         </div>
       </div>
 

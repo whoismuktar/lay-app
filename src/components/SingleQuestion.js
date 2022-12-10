@@ -140,7 +140,7 @@ function SingleQuestion(props) {
   return (
     <div className="question single-question page">
       <Feed feed={feed} collapse />
-      <AskQuestion />
+      {/* <AskQuestion /> */}
     </div>
   );
 }
