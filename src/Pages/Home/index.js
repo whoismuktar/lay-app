@@ -27,7 +27,7 @@ const mainFeed = [
           username: "dexter",
           firstName: "Jamal",
           lastName: "Da Conquerer",
-          profileImage: require("../../../Public/images/conquerer.jpeg"),
+          profileImage: "/images/conquerer.jpeg",
         },
         replies: [
           {
@@ -84,7 +84,7 @@ const mainFeed = [
           username: "mario",
           firstName: "Mr",
           lastName: "Warner",
-          profileImage: require("../../../Public/images/avatar2.jpeg"),
+          profileImage: "/images/avatar2.jpeg",
         },
       },
       {
@@ -95,7 +95,7 @@ const mainFeed = [
           username: "dexter",
           firstName: "Jamal",
           lastName: "Da Conquerer",
-          profileImage: require("../../../Public/images/conquerer.jpeg"),
+          profileImage: "/images/conquerer.jpeg",
         },
         replies: [
           {
@@ -159,7 +159,7 @@ const mainFeed = [
           username: "dexter",
           firstName: "Jamal",
           lastName: "Da Conquerer",
-          profileImage: require("../../../Public/images/conquerer.jpeg"),
+          profileImage: "/images/conquerer.jpeg",
         },
         replies: [
           {
@@ -216,7 +216,7 @@ const mainFeed = [
           username: "mario",
           firstName: "Mr",
           lastName: "Warner",
-          profileImage: require("../../../Public/images/conquerer.jpeg"),
+          profileImage: "/images/conquerer.jpeg",
         },
       },
     ],
@@ -231,7 +231,7 @@ const mainFeed = [
       username: "dexter",
       firstName: "Jamal",
       lastName: "Da Conquerer",
-      profileImage: require("../../../Public/images/conquerer.jpeg"),
+      profileImage: "/images/conquerer.jpeg",
     },
     answers: [
       {

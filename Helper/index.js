@@ -12,7 +12,7 @@ export const Filter = {
       username: "dexter",
       firstName: "Jamal",
       lastName: "Da Conquerer",
-      profileImage: require("../Public/images/conquerer.jpeg"),
+      profileImage: "images/conquerer.jpeg",
     }
   },
 
