@@ -1,5 +1,5 @@
 .public-view {
-  background-color: #f6f2ea;
+  background-color: #ffffff;
 
   .page {
     min-height: 80vh
@@ -103,11 +103,11 @@
       }
     }
   }
+  
 
-  // .auth-pg {
-
-  // }
-
+  :global(.nav-bar) {
+    background-color: #f6f2ea;
+  }
 }
 .app-footer {
   position: fixed;

@@ -1,0 +1,34 @@
+.landing {
+  .hero {
+    width: 50%;
+    margin: 0 auto;
+    padding: 100px 0 0px;
+
+    &__title {
+      font-weight: 700;
+      font-size: 44px;
+      margin-bottom: 15px;
+    }
+
+    &__subtitle {
+      font-weight: 500;
+      font-size: 15px;
+      margin-bottom: 35px;
+      color: #777777;
+    }
+
+    &__searchInput {
+      border-radius: 40px;
+      padding: 18px;
+    }
+
+    &__popular_tags {
+      margin: 10px 0;
+    }
+  }
+
+  &__activity_map {
+    height: 300px;
+    background-color: red;
+  }
+}

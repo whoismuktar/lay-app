@@ -35,7 +35,7 @@ function AuthLayout({children}) {
           lg: 32,
         }}
       >
-        <Col span={24}>
+        <Col span={24} className="">
           <main>
             {children}
           </main>

@@ -9,8 +9,9 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   console.log("early");
   console.log({pageProps});
-
+  
   const {isPublicPage} = pageProps
+  // console.log({isPublicPage});
 
   const Layout = isPublicPage ? PublicLayout : AuthLayout
   const getLayout = Component.getLayout || ((page) => page)

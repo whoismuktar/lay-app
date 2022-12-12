@@ -12,7 +12,7 @@ export const useScreen = () => {
   });
 
   useEffect(() => {
-    console.log(allScreens);
+    // console.log(allScreens);
 
     if (allScreens.md && !allScreens.sm && allScreens.lg && allScreens.xl) {
       return setScreen({...screen, ...{mdAndAbove: true}});
@@ -20,7 +20,7 @@ export const useScreen = () => {
       return setScreen({...screen, ...{smOnly: true}});
     }
 
-    console.log("------");
+    // console.log("------");
   }, [allScreens]);
 
   return screen

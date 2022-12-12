@@ -5,7 +5,7 @@ import useScreen from "../../../Hooks/useScreen";
 
 const LeftSideBar = ({collapsed=false}) => {
   const screens = useScreen()
-  console.log(screens);
+  // console.log(screens);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { Col, Input, Row } from "antd";
+import { Button, Col, Input, Row } from "antd";
 import React from "react";
 import { GrNotification } from "react-icons/gr";
 import { Filter } from "../../../Helper";
@@ -6,10 +6,34 @@ import UserCard from "../../UserCard";
 import styles from "../../../styles/nav-bar.module.scss"
 // import logo from "../../../Assets/images/logo.svg"
 
+const isAuthenticated = !true
+
 const NavBar = () => {
-  return (<div className={styles["nav-bar"]}>
+  return (<div className={`nav-bar ${styles["nav-bar"]}`}>
     <div className={styles["nav-bar__wrapper"]}>
-      <Row
+      {!isAuthenticated && <Row
+        align="middle"
+        justify="space-between"
+        className="width100"
+        gutter={{
+          xs: 8,
+          sm: 16,
+          md: 24,
+          lg: 32,
+        }}
+      >
+        <Col className="">
+          <h2>Home</h2>
+        </Col>
+
+        <Col className="">
+          <div className="align-center justify-center">
+            <Button className="app-btn" size="large">Join Community</Button>
+          </div>
+        </Col>
+      </Row>}
+
+      {isAuthenticated && <Row
         align="middle"
         justify="center"
         className="width100"
@@ -39,7 +63,7 @@ const NavBar = () => {
             <UserCard aviWidth={30} aviHeight={30} user={Filter.currentUser} />
           </div>
         </Col>
-      </Row>
+      </Row>}
     </div>
   </div>);
 };
