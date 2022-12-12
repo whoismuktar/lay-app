@@ -59,6 +59,7 @@ function UserProfile(props) {
     key: "2",
     // key: ()=> {setKey(2); return key},
     label: "All Questions",
+    id: "all-questions",
     children: <QuestionList />
   }
 
@@ -84,6 +85,9 @@ function UserProfile(props) {
   }
   const userContent = [allAnswers, allQuestions, Activity, !isOwnProfile && Bookmarks, !isOwnProfile && Subscribe]
   
+
+  const tab = userContent.find(item => item.id === props.tab)
+  const activeKey = tab.key
   return (
     <div className={`page ${styles["user-profile"]}`}>
       <div className={`dflex ${styles["user-profile__top-card"]}`}>
@@ -122,10 +126,18 @@ function UserProfile(props) {
       </div>
 
       <div className="user-profile__content">
-        <Tabs defaultActiveKey="1" centered items={userContent} />
+        <Tabs defaultActiveKey="1" centered activeKey={activeKey} items={userContent} />
       </div>
     </div>
   );
 }
 
 export default UserProfile;
+
+UserProfile.getInitialProps = async ({ query }) => {
+  const {tab} = query
+
+  console.log({tab});
+
+  return {tab}
+}

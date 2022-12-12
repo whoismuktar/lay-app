@@ -10,3 +10,9 @@ function Login(props) {
 }
 
 export default Login;
+
+export async function getServerSideProps() {
+  return {
+    props: { isPublicPage: true }
+  };
+}

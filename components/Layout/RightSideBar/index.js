@@ -8,8 +8,8 @@ import UserList from "../../UserList";
 const RightSideBar = () => {
   const router = useRouter()
 
-  console.log({router});
-  const isHome = router.pathname = "/"
+  // console.log({router});
+  const isHome = router.asPath === "/"
 
   const isSingleQuestion = false
   // const isSingleQuestion = useMatch({

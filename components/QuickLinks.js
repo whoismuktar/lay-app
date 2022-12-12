@@ -2,8 +2,8 @@ import React from "react";
 import { BiHomeAlt } from "react-icons/bi";
 import { IoBookmarksOutline } from "react-icons/io5";
 import { FiHash, FiTrendingUp } from "react-icons/fi";
-import { GrNotification } from "react-icons/gr";
 import Link from "next/link";
+import { BsPatchQuestion } from "react-icons/bs";
 
 const links = [
   {
@@ -14,12 +14,10 @@ const links = [
     notifier: false,
   },
   {
-    title: "Notifications",
-    path: "/notifications",
-    query: "notification",
-    icon: <GrNotification />,
-    notifier: true,
-    isNew: true,
+    title: "My Questions",
+    path: "/user/:questions?tab=all-questions",
+    query: "myQuestions",
+    icon: <BsPatchQuestion />,
   },
   {
     title: "Top Questions",
@@ -27,6 +25,7 @@ const links = [
     query: "topQuestion",
     icon: <FiTrendingUp />,
     notifier: false,
+    isNew: true,
   },
   {
     title: "Trending Questions",
@@ -76,7 +75,7 @@ const Listing = (query) => {
   }
 }
 
-const QuickLinks = () => {
+const QuickLinks = ({iconOnly=false}) => {
   return (
     <div className="quicklinks">
       <ul className="quicklinks__ul">
@@ -92,20 +91,17 @@ const QuickLinks = () => {
                       <span className="notifier"></span>
                     }
                   </span>
-                  <span className="quicklinks__title align-center">
-                    <Link href={link.path}>
-                      {link.title}
-                    </Link>
-                    {/* <Link to={{
-                      pathname: link.path,
-                      state: { customData: {} }
-                    }}>
-                    </Link> */}
-
-                    {
-                      link.isNew && <span className="new-label">New</span>
-                    }
-                  </span>
+                  {
+                    !iconOnly &&
+                    <span className="quicklinks__title align-center">
+                      <Link href={link.path}>
+                        {link.title}
+                      </Link>
+                      {
+                        link.isNew && <span className="new-label">New</span>
+                      }
+                    </span>
+                  }
                 </div>
 
                 <div className="item__listing">

@@ -1,0 +1,44 @@
+.nav-bar {
+  background-color: #ffffff;
+  
+  .icon__wrapper {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  &__wrapper {
+    height: 70px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__searchInput {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 7px 15px;
+    border-radius: 20px;
+    outline: none;
+  }
+
+  &__icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  :global(.user-card) {
+    background-color: #c9bcbc;
+    padding: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  :global(.notifier) {
+    top: -3px;
+    right: -3px;
+  }
+}

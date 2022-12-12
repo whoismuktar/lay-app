@@ -7,8 +7,12 @@ import { store } from "../redux/store";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
-  const Layout = AuthLayout || PublicLayout
+  console.log("early");
   console.log({pageProps});
+
+  const {isPublicPage} = pageProps
+
+  const Layout = isPublicPage ? PublicLayout : AuthLayout
   const getLayout = Component.getLayout || ((page) => page)
 
   return getLayout(

@@ -1,13 +1,17 @@
 import React from "react";
 import QuickLinks from "../../QuickLinks";
 import UserList from "../../UserList";
+import useScreen from "../../../Hooks/useScreen";
 
-const LeftSideBar = () => {
+const LeftSideBar = ({collapsed=false}) => {
+  const screens = useScreen()
+  console.log(screens);
+
   return (
     <>
-      <div className="sidebar left-sidebar">
-        <div className="sidebar__card plain">
-          <QuickLinks />
+      <div className={`sidebar left-sidebar ${collapsed && "sidebar__collapsed"}`}>
+        <div className={`sidebar__card plain ${collapsed ?? "collapsed"}`}>
+          <QuickLinks iconOnly={screens.smOnly} />
         </div>
 
         <div className="sidebar__card plain">

@@ -26,6 +26,13 @@ body {
 
 
 // Ant Default START
+
+.ant-tabs-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;  
+}
 .ant-popconfirm-message {
   .question-tips {
     font-size: 11px !important;
@@ -198,6 +205,7 @@ li {
 
     border: 3px solid #ffffff;
     width: 25px !important;
+    min-width: 25px !important;
     height: 25px !important;
     border-radius: 11px;
     
