@@ -25,9 +25,3 @@ function NotFound(props) {
 }
 
 export default NotFound;
-
-export async function getServerSideProps() {
-  return {
-    props: { isPublicPage: true }
-  };
-}
