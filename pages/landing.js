@@ -1,12 +1,15 @@
 import React from "react";
-import { Input, Tag } from "antd";
+import { Button, Input, Tag } from "antd";
 import { BiSearch } from "react-icons/bi";
 import styles from "../styles/landing.module.scss";
 import { useState } from "react";
 import ActivityMap from "../components/ActivityMap";
+import { useEffect } from "react";
 
 function Landing(props) {
-  const [focused, setFocused] = useState(false);
+  const [searchFocused, setSearchFocused] = useState(false);
+  const [layerSelected, setLayerSelected] = useState(0);
+  const [slideTimer, setSlideTimer] = useState(0);
 
   const popularTags = [
     {
@@ -17,9 +20,88 @@ function Landing(props) {
     },
   ];
 
+  const featuredContributors = [
+    {
+      name: "Dele Momodu",
+      specialty: "Ted Talk",
+      questions: 100,
+      answers: 730,
+      contributions: 830,
+      image: "/images/avatar2.jpeg",
+      category: "Cooking",
+    },
+    {
+      name: "Dele Momodu",
+      specialty: "Ted Talk",
+      questions: 100,
+      answers: 730,
+      contributions: 830,
+      image: "/images/avatar2.jpeg",
+      category: "",
+    },
+    {
+      name: "Emma Mia",
+      specialty: "Youtuber",
+      questions: 100,
+      answers: 730,
+      contributions: 830,
+      image: "/images/avatar2.jpeg",
+      category: "Cooking",
+    },
+  ];
+
+  const ContributorSlide = ({ person, idx }) => {
+    return (
+      <div
+        className={`${styles.contributor_layer} ${
+          // idx === layerSelected && styles.contributor_layer__active
+          idx === 0 && styles.contributor_layer__active
+        }`}
+        // style={{ backgroundImage: `url(${person.image})` }}
+        style={{ backgroundImage: `url(/images/avatar2.jpeg)` }}
+      >
+        <div className={styles.contributor_layer__content}>
+          <div className={styles.contributor_layer__meta}>
+            <div className={styles.contributor_layer__category}>
+              {person.category}
+            </div>
+            <div className={styles.contributor_layer__name}>{person.name}</div>
+          </div>
+
+          <div className={styles.contributor_layer__contribution}>
+            <div className={styles.contributor_layer__contribution_count}>
+              {person.contributions}
+            </div>
+            <div className={styles.contributor_layer__contribution_label}>
+              Contributions
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const next =
+    layerSelected + 1 === featuredContributors.length ? 0 : layerSelected + 1;
+
+  // useEffect(() => {
+  //   let started = true;
+  //   if (started) {
+  //     setSlideTimer(() => {
+  //       setInterval(() => {
+  //         setLayerSelected(next);
+  //       }, 1000);
+  //     });
+
+  //   started = false;
+  // }
+
+  //   // () => clearInterval();
+  // }, []);
+
   return (
     <div className={styles.landing}>
-      <div className="wave-container" style={{overflow: "hidden"}}>
+      <div className="wave-container" style={{ overflow: "hidden" }}>
         <div className="container allChildrenCenter text-center">
           <div className={styles.hero}>
             <div className={styles.hero__title}>
@@ -35,10 +117,13 @@ function Landing(props) {
               <Input
                 placeholder="Search Questions"
                 className={`box-shadow1 ${styles["hero__searchInput"]}`}
-                onFocus={() => setFocused(true)}
-                onBlur={() => setFocused(false)}
+                onFocus={() => setSearchFocused(true)}
+                onBlur={() => setSearchFocused(false)}
                 suffix={
-                  <BiSearch size={30} color={focused ? "#000000" : "#777777"} />
+                  <BiSearch
+                    size={30}
+                    color={searchFocused ? "#000000" : "#777777"}
+                  />
                 }
               />
             </div>
@@ -67,11 +152,23 @@ function Landing(props) {
           <ActivityMap />
         </div>
       </div>
+
       <div
-        className="container allChildrenCenter"
-        style={{ backgroundColor: "aqua", height: 500 }}
+        className={`align-center justify-space-between ${styles.featured_contributors}`}
       >
-        Hello
+        <div className={styles.layers_cta}>
+          <div className={styles.layers_cta__titleWrapper}>
+            <div className={styles.layers_cta__title}>How Simple</div>
+            <div className={styles.layers_cta__subtitle}>Can You Answer?</div>
+          </div>
+          <Button className="app-btn" size="large" style={{height: 50, fontWeight: 500}}>Join Community</Button>
+        </div>
+
+        <div className={styles.layers}>
+          {featuredContributors.map((person, i) => {
+            return <ContributorSlide key={i} person={person} idx={i} />;
+          })}
+        </div>
       </div>
     </div>
   );
