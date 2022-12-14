@@ -3,6 +3,7 @@ import { Input, Tag } from "antd";
 import { BiSearch } from "react-icons/bi";
 import styles from "../styles/landing.module.scss";
 import { useState } from "react";
+import ActivityMap from "../components/ActivityMap";
 
 function Landing(props) {
   const [focused, setFocused] = useState(false);
@@ -18,12 +19,12 @@ function Landing(props) {
 
   return (
     <div className={styles.landing}>
-      <div class="wave-container">
+      <div className="wave-container" style={{overflow: "hidden"}}>
         <div className="container allChildrenCenter text-center">
           <div className={styles.hero}>
             <div className={styles.hero__title}>
-              Let’s build a forum where we give answers like we are talking to
-              a lay man
+              Let’s build a forum where we give answers like we are talking to a
+              lay man
             </div>
 
             <div className={styles.hero__subtitle}>
@@ -52,7 +53,9 @@ function Landing(props) {
               <div>
                 {popularTags.map((tag, i) => {
                   return (
-                    <Tag className="app-tag cursorPointer">{tag.title}</Tag>
+                    <Tag key={i} className="app-tag cursorPointer">
+                      {tag.title}
+                    </Tag>
                   );
                 })}
               </div>
@@ -60,7 +63,15 @@ function Landing(props) {
           </div>
         </div>
 
-        <div className={styles.landing__activity_map}></div>
+        <div className={styles.landing__activity_map}>
+          <ActivityMap />
+        </div>
+      </div>
+      <div
+        className="container allChildrenCenter"
+        style={{ backgroundColor: "aqua", height: 500 }}
+      >
+        Hello
       </div>
     </div>
   );
