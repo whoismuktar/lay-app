@@ -34,10 +34,10 @@ const ActivityMap = () => {
     <ComposableMap
       projectionConfig={{
          rotate: [-10, 0, 0],
-         scale: 190,
+         scale: 150,
          center: [0, 35],
       }}
-      height={250}
+      height={200}
     >
       <Geographies geography={geoUrl}>
         {({ geographies }) =>

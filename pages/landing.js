@@ -1,15 +1,19 @@
-import React from "react";
+import React, { createRef } from "react";
 import { Button, Input, Tag } from "antd";
 import { BiSearch } from "react-icons/bi";
 import styles from "../styles/landing.module.scss";
 import { useState } from "react";
 import ActivityMap from "../components/ActivityMap";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 function Landing(props) {
   const [searchFocused, setSearchFocused] = useState(false);
   const [layerSelected, setLayerSelected] = useState(0);
   const [slideTimer, setSlideTimer] = useState(0);
+  const [startTimer, setStartTimer] = useState(0);
+
+  const activeRef = useRef()
 
   const popularTags = [
     {
@@ -54,11 +58,10 @@ function Landing(props) {
     return (
       <div
         className={`${styles.contributor_layer} ${
-          // idx === layerSelected && styles.contributor_layer__active
-          idx === 0 && styles.contributor_layer__active
+          idx === layerSelected && styles.contributor_layer__active
         }`}
-        // style={{ backgroundImage: `url(${person.image})` }}
-        style={{ backgroundImage: `url(/images/avatar2.jpeg)` }}
+        style={{ backgroundImage: `url(${person.image})` }}
+        ref={idx === layerSelected ? activeRef : createRef()}
       >
         <div className={styles.contributor_layer__content}>
           <div className={styles.contributor_layer__meta}>
@@ -80,28 +83,41 @@ function Landing(props) {
       </div>
     );
   };
+  
+  // Init Timer
+  useEffect(()=>{
+    setStartTimer(true)
 
-  const next =
-    layerSelected + 1 === featuredContributors.length ? 0 : layerSelected + 1;
+    return () => {
+      return setStartTimer(false)
+    };
 
-  // useEffect(() => {
-  //   let started = true;
-  //   if (started) {
-  //     setSlideTimer(() => {
-  //       setInterval(() => {
-  //         setLayerSelected(next);
-  //       }, 1000);
-  //     });
+  }, [])
 
-  //   started = false;
-  // }
+  // Start Timer
+  useEffect(() => {
+    if (startTimer) {
+      let next2 = 0
+      console.log("next2++:", next2);
 
-  //   // () => clearInterval();
-  // }, []);
+      setSlideTimer(() =>
+        setInterval(() => {          
+          next2 = next2 + 1 === 3 ? 0 : next2 + 1;
+    activeRef.current.style.width = '550px';
+          setLayerSelected(next2);
+          console.log(activeRef.current);
+        }, 4000)
+      );
+    }
+  }, [startTimer]);
+
+  useEffect(()=> {
+    activeRef.current.style.width = '540px';
+  }, [layerSelected])
 
   return (
     <div className={styles.landing}>
-      <div className="wave-container" style={{ overflow: "hidden" }}>
+      <div className={styles.hero_wrapper}>
         <div className="container allChildrenCenter text-center">
           <div className={styles.hero}>
             <div className={styles.hero__title}>
@@ -121,7 +137,7 @@ function Landing(props) {
                 onBlur={() => setSearchFocused(false)}
                 suffix={
                   <BiSearch
-                    size={30}
+                    size={25}
                     color={searchFocused ? "#000000" : "#777777"}
                   />
                 }
@@ -147,11 +163,11 @@ function Landing(props) {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className={styles.landing__activity_map}>
+        <div className={`wave-container ${styles.landing__activity_map}`}>
           <ActivityMap />
         </div>
-      </div>
 
       <div
         className={`align-center justify-space-between ${styles.featured_contributors}`}
