@@ -47,6 +47,11 @@ const ActivityMap = () => {
               geography={geo}
               fill="#f9f8f3"
               stroke="#f1eeeb"
+              style={{
+                default: { outline: "none" },
+                hover: { outline: "none" },
+                pressed: { outline: "none" },
+              }}
             />
           ))
         }
