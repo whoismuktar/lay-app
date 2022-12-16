@@ -2,8 +2,9 @@ import React from "react";
 import { Filter } from "../../Helper";
 import UserCard from "../UserCard";
 import styles from "../../styles/question.module.scss"
+import { RiQuestionAnswerLine } from "react-icons/ri";
 
-function QuestionCard({ question, idx, answerCardMode }) {
+function QuestionCard({ question, idx, answerCardMode, hideDescription, showSideCount, answersCount }) {
   const readMoreLen = 90;
   const isReadMore = question.description.length > 90;
   return (
@@ -12,7 +13,7 @@ function QuestionCard({ question, idx, answerCardMode }) {
       <div className={`${styles["question-card__wrapper"]}`}>
         <div className={`${styles["question-card__title"]}`}>{question.title}</div>
 
-        {question.description && (
+        {(!hideDescription && question.description) && (
           <div
             className={`${styles["question-card__description"]}`}
             dangerouslySetInnerHTML={{
@@ -20,7 +21,7 @@ function QuestionCard({ question, idx, answerCardMode }) {
             }}
           />
         )}
-        {question.description && isReadMore && (
+        {(!hideDescription && question.description && isReadMore) && (
           <div className={`read-more ${styles["read-more"]}`}>Read more</div>
         )}
 
@@ -69,6 +70,19 @@ function QuestionCard({ question, idx, answerCardMode }) {
           </>
         )}
       </div>
+
+      {showSideCount &&<div style={{
+        // position:
+        alignSelf: "center",
+        flex: 1,
+        textAlign: "right"
+      }}
+      >
+        <span className="justify-end align-center" style={{color: "#818084"}}>
+          <RiQuestionAnswerLine style={{marginRight: 5}} />
+          <span>{question.answers.length}</span>
+        </span>
+      </div>}
     </div>
   );
 }

@@ -116,7 +116,7 @@ const mainFeed = [
   },
 ];
 
-function QuestionList({ answerCardMode }) {
+function QuestionList({ answerCardMode, hideDescription, showSideCount, answersCount }) {
   return (
     <div className="questions">
       {mainFeed.map((question, i) => {
@@ -126,6 +126,9 @@ function QuestionList({ answerCardMode }) {
             question={question}
             idx={i}
             answerCardMode={answerCardMode}
+            hideDescription={hideDescription}
+            showSideCount={showSideCount}
+            answersCount={answersCount}
           />
         );
       })}

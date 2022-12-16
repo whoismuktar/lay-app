@@ -6,6 +6,7 @@ import { useState } from "react";
 import ActivityMap from "../components/ActivityMap";
 import { useEffect } from "react";
 import { useRef } from "react";
+import SignUpCTABanner from "../components/FeaturedQuestions";
 
 function Landing(props) {
   const [searchFocused, setSearchFocused] = useState(false);
@@ -13,7 +14,8 @@ function Landing(props) {
   const [slideTimer, setSlideTimer] = useState(0);
   const [startTimer, setStartTimer] = useState(0);
 
-  const activeRef = useRef()
+  const slideDuration = 4000
+  const activeRef = useRef();
 
   const popularTags = [
     {
@@ -26,13 +28,22 @@ function Landing(props) {
 
   const featuredContributors = [
     {
-      name: "Dele Momodu",
+      name: "Emma Mia",
       specialty: "Ted Talk",
       questions: 100,
       answers: 730,
       contributions: 830,
-      image: "/images/avatar2.jpeg",
-      category: "Cooking",
+      image: "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      category: "Traveling",
+    },
+    {
+      name: "Dele Momodu",
+      specialty: "Youtuber",
+      questions: 100,
+      answers: 730,
+      contributions: 830,
+      image: "https://images.unsplash.com/photo-1565884280295-98eb83e41c65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+      category: "Photography",
     },
     {
       name: "Dele Momodu",
@@ -43,20 +54,12 @@ function Landing(props) {
       image: "/images/avatar2.jpeg",
       category: "",
     },
-    {
-      name: "Emma Mia",
-      specialty: "Youtuber",
-      questions: 100,
-      answers: 730,
-      contributions: 830,
-      image: "/images/avatar2.jpeg",
-      category: "Cooking",
-    },
   ];
 
   const ContributorSlide = ({ person, idx }) => {
     return (
       <div
+        onClick={() => selectSlide(idx)}
         className={`${styles.contributor_layer} ${
           idx === layerSelected && styles.contributor_layer__active
         }`}
@@ -83,37 +86,54 @@ function Landing(props) {
       </div>
     );
   };
-  
+
+  const selectSlide = (idx) => {
+    setLayerSelected(idx)
+    setSlideTimer(null)
+    clearInterval(slideTimer)
+    
+    let next2 = 0;
+    console.log("next2++:", next2);
+
+    setSlideTimer(() =>
+      setInterval(() => {
+        next2 = next2 + 1 === 3 ? 0 : next2 + 1;
+        activeRef.current.style.width = "550px";
+        setLayerSelected(next2);
+        console.log(activeRef.current);
+      }, slideDuration)
+    );
+  };
+
   // Init Timer
-  useEffect(()=>{
-    setStartTimer(true)
+  useEffect(() => {
+    setStartTimer(true);
 
     return () => {
-      return setStartTimer(false)
+      return setStartTimer(false);
     };
-
-  }, [])
+  }, []);
 
   // Start Timer
   useEffect(() => {
     if (startTimer) {
-      let next2 = 0
+      let next2 = 0;
       console.log("next2++:", next2);
 
       setSlideTimer(() =>
-        setInterval(() => {          
+        setInterval(() => {
           next2 = next2 + 1 === 3 ? 0 : next2 + 1;
-    activeRef.current.style.width = '550px';
+          activeRef.current.style.width = "550px";
           setLayerSelected(next2);
           console.log(activeRef.current);
-        }, 4000)
+        }, slideDuration)
       );
     }
   }, [startTimer]);
 
-  useEffect(()=> {
-    activeRef.current.style.width = '540px';
-  }, [layerSelected])
+  useEffect(() => {
+    activeRef.current.style.width = "540px";
+  }, [layerSelected]);
 
   return (
     <div className={styles.landing}>
@@ -165,9 +185,9 @@ function Landing(props) {
         </div>
       </div>
 
-        <div className={`wave-container ${styles.landing__activity_map}`}>
-          <ActivityMap />
-        </div>
+      <div className={`wave-container ${styles.landing__activity_map}`}>
+        <ActivityMap />
+      </div>
 
       <div
         className={`align-center justify-space-between ${styles.featured_contributors}`}
@@ -177,15 +197,46 @@ function Landing(props) {
             <div className={styles.layers_cta__title}>How Simple</div>
             <div className={styles.layers_cta__subtitle}>Can You Answer?</div>
           </div>
-          <Button className="app-btn" size="large" style={{height: 50, fontWeight: 500}}>Join Community</Button>
+          <Button
+            className="app-btn"
+            size="large"
+            style={{ height: 50, fontWeight: 500 }}
+          >
+            Join Community
+          </Button>
         </div>
 
         <div className={styles.layers}>
-          {featuredContributors.map((person, i) => {
-            return <ContributorSlide key={i} person={person} idx={i} />;
-          })}
+          <div className={styles.layers_wrapper}>
+            {featuredContributors.map((person, i) => {
+              return (
+                <ContributorSlide
+                  key={i}
+                  person={person}
+                  idx={i}
+                />
+              );
+            })}
+          </div>
+          <div className={styles.layers_pickers}>
+            {featuredContributors.map((person, i) => {
+              return (
+                <div
+                  className={`${styles.layers_pickers_item} ${
+                    i === layerSelected && styles.layers_pickers_item__active
+                  }`}
+                  onClick={() => selectSlide(i)}
+                ></div>
+              );
+            })}
+          </div>
         </div>
       </div>
+
+      <div className="container ">
+        <SignUpCTABanner />
+      </div>
+
     </div>
   );
 }
