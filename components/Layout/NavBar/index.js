@@ -28,7 +28,7 @@ const NavBar = () => {
 
         <Col className="">
           <div className="align-center justify-center">
-            <Button className="app-btn" size="large">Join Community</Button>
+            <Button className="app-btn" size="large" href="/welcome">Join Community</Button>
           </div>
         </Col>
       </Row>}

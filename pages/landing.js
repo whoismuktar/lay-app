@@ -222,6 +222,7 @@ function Landing(props) {
             {featuredContributors.map((person, i) => {
               return (
                 <div
+                key={i}
                   className={`${styles.layers_pickers_item} ${
                     i === layerSelected && styles.layers_pickers_item__active
                   }`}

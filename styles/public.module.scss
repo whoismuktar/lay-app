@@ -55,6 +55,10 @@
         display: inline-flex;
         align-items: center;
         margin: 25px 0;
+
+        &__dash {
+          margin-top: 5px;
+        }
       }
       &__text {
         margin: 0 5px;
@@ -62,6 +66,7 @@
       }
       &__icon {
         margin-top: 5px;
+        margin-right: 5px;
       }
 
       &__auths {

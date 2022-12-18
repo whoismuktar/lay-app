@@ -4,10 +4,14 @@ import Footer from "./Footer";
 import { Col, Row } from "antd";
 // import useCurrentRoute from "../../Hooks/useCurrentRoute";
 import styles from "../../styles/public.module.scss";
+import { useRouter } from "next/router";
 
-function AuthLayout({children}) {
+function AuthLayout(props) {
   const currentRoute = "";
   const [hideFooter, setHideFooter] = useState(false);
+
+  const router = useRouter()
+  console.log({props, router});
   
   useEffect(() => {
     const hideFooterList = [];
@@ -37,7 +41,7 @@ function AuthLayout({children}) {
       >
         <Col span={24} className="">
           <main>
-            {children}
+            {props.children}
           </main>
         </Col>
       </Row>
@@ -45,7 +49,7 @@ function AuthLayout({children}) {
       {!hideFooter && (
         <Row className={styles["public-view__footer"]}>
           <Col span={24}>
-            <Footer />
+            <Footer footerBg={props.footerBg} />
           </Col>
         </Row>
       )}

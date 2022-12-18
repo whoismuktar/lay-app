@@ -1,6 +1,7 @@
 import { Button, Form, Input } from "antd";
 import React, { useState } from "react";
 import { BsApple, BsDashLg, BsFacebook, BsGoogle } from "react-icons/bs";
+import styles from "../../styles/public.module.scss";
 
 function Login() {
   const [authState, setAuthState] = useState("login");
@@ -108,13 +109,13 @@ function Login() {
   };
 
   return (
-    <div className="auth-card">
-      <div className="auth-intro">
-        <div className="auth-intro__title">
+    <div className={styles["auth-card"]}>
+      <div className={styles["auth-intro"]}>
+        <div className={styles["auth-intro__title"]}>
           {isLogin && <span>Welcome Back</span>}
           {isRegister && <span>Join Community</span>}
         </div>
-        <div className="auth-intro__subtitle">
+        <div className={styles["auth-intro__subtitle"]}>
           {isLogin && (
             <span>
               Holla, enter your details to get signed in to your account
@@ -126,12 +127,12 @@ function Login() {
         </div>
       </div>
 
-      <div className="auth-form">
+      <div className={styles["auth-form"]}>
         {isLogin && <LoginForm />}
         {isRegister && <RegisterForm />}
       </div>
 
-      <div className="form-cta">
+      <div className={styles["form-cta"]}>
         {isLogin && (
           <Button block className="app-btn" htmlType="submit">
             Continue
@@ -144,44 +145,46 @@ function Login() {
         )}
       </div>
 
-      <div className="alt-auth text-center">
-        <div className="alt-auth__intro">
-          <span className="alt-auth__icon">
+      <div className={`text-center ${styles["alt-auth"]}`}>
+        <div className={styles["alt-auth__intro"]}>
+          <span className={styles["alt-auth__icon"]}>
             <BsDashLg />
           </span>
           { isLogin &&
-            <span className="alt-auth__text">Or Sign In with</span>
+            <span className={styles["alt-auth__text"]}>Or Sign In with</span>
           }
           { isRegister &&
-            <span className="alt-auth__text">Or Continue with</span>
+            <span className={styles["alt-auth__text"]}>Or Continue with</span>
           }
-          <span className="alt-auth__icon">
+          <span className={styles["alt-auth__intro__dash"]}>
             <BsDashLg />
           </span>
         </div>
 
-        <div className="alt-auth__auths">
-          <Button className="alt-auth__btn google-auth">
-            <BsGoogle className="alt-auth__btn__icon" />
-            <span className="alt-auth__btn__text">Google</span>
+        <div className={styles["alt-auth__auths"]}>
+          <Button className={`${styles["alt-auth__btn"]} ${styles["google-auth"]}`}>
+            <BsGoogle className={styles["alt-auth__btn__icon"]} />
+            <span className={styles["alt-auth__btn__text"]}>Google</span>
           </Button>
-          <Button className="alt-auth__btn apple-auth">
-            <BsApple className="alt-auth__btn__icon" />
-            <span className="alt-auth__btn__text">Apple ID</span>
+
+          <Button className={`${styles["alt-auth__btn"]} ${styles["apple-auth"]}`}>
+            <BsApple className={styles["alt-auth__btn__icon"]} />
+            <span className={styles["alt-auth__btn__text"]}>Apple ID</span>
           </Button>
-          <Button className="alt-auth__btn facebook-auth">
-            <BsFacebook className="alt-auth__btn__icon" />
-            <span className="alt-auth__btn__text">Facebook</span>
+
+          <Button className={`${styles["alt-auth__btn"]} ${styles["facebook-auth"]}`}>
+            <BsFacebook className={styles["alt-auth__btn__icon"]} />
+            <span className={styles["alt-auth__btn__text"]}>Facebook</span>
           </Button>
         </div>
       </div>
 
-      <div className="auth-switcher">
+      <div className={styles["auth-switcher"]}>
         {isLogin && (
           <div>
             Dont have an account?
             <span
-              className="auth-switcher__cta"
+              className={styles["auth-switcher__cta"]}
               onClick={() => setAuthState("register")}
             >
               Join Community
@@ -192,7 +195,7 @@ function Login() {
         {isRegister && (
           <div>
             <span
-              className="auth-switcher__cta"
+              className={styles["auth-switcher__cta"]}
               onClick={() => setAuthState("login")}
             >
               Login

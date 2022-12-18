@@ -5,7 +5,7 @@ import PublicLayout from "./components/Layout/PublicLayout";
 import NotFound from "./components/Errors/NotFound";
 import TopQuestions from "./components/TopQuestions";
 import SingleQuestion from "./components/SingleQuestion";
-import Auth from "./Pages/Auth"
+import Auth from "../pages/welcome"
 import UserProfile from "./Pages/User"
 
 const router = createBrowserRouter([

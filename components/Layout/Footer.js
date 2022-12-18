@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <div className="app-footer" id="footer">
+    <div className="app-footer" id="footer" style={{backgroundColor: props.footerBg}}>
       <div className="app-footer__content">
         <ul>
           <li>

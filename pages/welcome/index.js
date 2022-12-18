@@ -1,8 +1,8 @@
 import React from "react";
-import AuthCard from "../../components/Auth/AuthCard";
+import AuthCard from "./AuthCard";
 
 function Login(props) {
-  return <div className="auth-pg page allChildrenCenter">
+  return <div className="public-bg page allChildrenCenter">
     <div className="app-card box-shadow2">
       <AuthCard />
     </div>
@@ -13,6 +13,6 @@ export default Login;
 
 export async function getServerSideProps() {
   return {
-    props: { isPublicPage: true }
+    props: { isPublicPage: true, footerBg: "#f6f2ea" }
   };
 }

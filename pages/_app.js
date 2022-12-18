@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
 
   return getLayout(
     <Provider store={store}>
-      <Layout>
+      <Layout {...pageProps}>
         <Head>
           {/* <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,7 +30,8 @@ function MyApp({ Component, pageProps }) {
           />
           <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> */}
         </Head>
-        <Component {...pageProps} />
+        {/* <Component {...pageProps} /> */}
+        <Component />
       </Layout>
     </Provider>);
 }
